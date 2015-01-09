@@ -1,0 +1,1 @@
+C:\Source\GoApi\Test1\bin\Debug\Test1.exe.config
