@@ -26,7 +26,7 @@ TODO: Describe
 - .NET Framework 4.5.1 or later
 
 # Concepts
-Read about the concepts used in the SDK [here](Concepts).
+Read about the concepts used in the SDK [here](Concepts.md).
 
 # Tutorials
 
