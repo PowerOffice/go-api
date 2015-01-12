@@ -42,7 +42,7 @@ using GoApi.Core;
 
 Now we must set up our authorization settings. 
 
-Here we provide the *developer key* and the *client key* (see [Registration and Client activation](../Registration) for more info).
+Here we provide the *application key* and the *client key* (see [Registration and Client activation](../Registration) for more info).
 
 A *token store* must also be provided. The token store is responsible for persisting the access key and refresh key obtained from the authorisation server (see [Authentication, Technical details](../Details/Authentication) for technical details).
 

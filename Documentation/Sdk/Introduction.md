@@ -10,7 +10,7 @@ The SDK is constantly beeing maintained and expanded based on users feed back. I
 
 # First steps to developing an integration
 
-The first thing you must do is to register as an integration parter to obtain a *developer key*. Please read the [Registration and Client activation](../Registration) section.
+The first thing you must do is to register as an integration parter to obtain an *application key*. Please read the [Registration and Client activation](../Registration.md) section.
 
 # Download SDK
 The SDK can be downloaded from [github](http://github.com/PowerOffice/go-api)
@@ -30,7 +30,7 @@ Read about the concepts used in the SDK [here](Concepts).
 
 # Tutorials
 
-[Getting started](Tutorials/GettingStarted)
+[Getting started](Tutorials/GettingStarted.md)
 
 # Examples
 

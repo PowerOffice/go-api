@@ -5,9 +5,9 @@ Before the GO-API can be used, you must register as an integration partner, and 
 
 ## Registering as an integration partner
 
-Before an integration component can request access to the API the developer must [register as an integration partner.](http://api.go.poweroffice.net/register)
+Before an integration component can request access to the API the developer must [register as an integration partner.](http://api.poweroffice.net/register)
 
-When you register you will receive a *developer key*. This key is used to request authorization.
+When you register your application you will receive an *application key*. This key is used to request authorization when performing API calls.
 
 ## Client activation
 

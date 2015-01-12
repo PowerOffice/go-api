@@ -5,7 +5,7 @@ This document describes the basics of GO-API calls.
 
 **If you use the C# GO-API SDK you do not need to know the technical details in this document** 
 
-The examples in this document assumes you have read the [Authentication section](Authentication). Details about the *access key* will not be discussed here.
+The examples in this document assumes you have read the [Authentication section](Authentication.md). Details about the *access key* will not be discussed here.
 
 # Overview
 
@@ -74,7 +74,7 @@ If the organization number is now the customer can be requested using oData quer
 
 ## Create a customer
 
-To create a new customer you would use the `POST` verb. Some minimum data must be provided, please see the [GO-API documention](api/) for details. If the customer is determined to be an existing customer, the customer will instead be updated.
+To create a new customer you would use the `POST` verb. Some minimum data must be provided, please see the [GO-API documention](../Sdk/GO SDK.chm) for details. If the customer is determined to be an existing customer, the customer will instead be updated.
 
 	POST http://api.go.poweroffice.net/customer/ HTTP/1.1
 	Authorization: Bearer [Access Key]

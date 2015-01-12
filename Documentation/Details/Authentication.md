@@ -8,7 +8,7 @@ If you use the C# GO-API SDK or a third party oAuth client library, you should n
 
 ### Third party oAuth client libraries
 
-If you use a third party oAuth library to assist with the authentication process, the *developer key* is provided in as the *client key* value and the *client key* equals the oAuth *client secret*. 
+If you use a third party oAuth library to assist with the authentication process, the *application key* is provided in as the *client key* value and the *client key* equals the oAuth *client secret*. 
 
 A list of oAuth client libraries can be found on at [oauth.net](http://oauth.net/2/).
 
@@ -16,7 +16,7 @@ The oAuth spesification documentation can be found [here](http://tools.ietf.org/
 
 # Prerequisites
 
-Before your integration component can be authorized to perform API calls, you must first [register as a developer](Registration) to obtain a *developer key*.
+Before your integration component can be authorized to perform API calls, you must first [register as a developer](Registration.md) to obtain an *application key*.
 
 
 # The authorization process
@@ -25,16 +25,16 @@ Befor any API calls can be made, you must obtain an access key from the authoriz
 
 The authentication process use the oAuth2.0 client credentials grant flow to request and provide access keys and refresh keys. All calls must be made with the https protocol. Http requests will be denied.
 
-When you have obtained a *developer key* and an *client key* following the process described in **First steps** you are ready to request an *access token* from the authorization server.
+When you have obtained an *application key* and an *client key* following the process described in **First steps** you are ready to request an *access token* from the authorization server.
 
-When you send the *developer key* and the *client key* to the authorization server, you will receive an *access token* and a *refresh token* from the authorization server.
+When you send the *application key* and the *client key* to the authorization server, you will receive an *access token* and a *refresh token* from the authorization server.
 
 The *access token* is then provided to all API calls. The *access token* will expire after 20 minutes. You will then request a new *access token* from the authorization server using the *refresh token*.
 
 
 ## Requesting access and refresh tokens
 
-Requests to the authorization server must provide the *developer key* and an *client key* in the `Authorization` header. The keys must be separated by `:` and the whole string must be Base64 encoded.
+Requests to the authorization server must provide the *application key* and an *client key* in the `Authorization` header. The keys must be separated by `:` and the whole string must be Base64 encoded.
 
 The `Content-Type` header must be set to `application/x-www-form-urlencoded` and the body must contain `grant_type=client`
 
