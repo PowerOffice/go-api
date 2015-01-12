@@ -44,7 +44,7 @@ Now we must set up our authorization settings.
 
 Here we provide the *application key* and the *client key* (see [Registration and Client activation](../../Registration.md) for more info).
 
-A *token store* must also be provided. The token store is responsible for persisting the access key and refresh key obtained from the authorisation server (see [Authentication, Technical details](../Details/Authentication.md) for technical details).
+A *token store* must also be provided. The token store is responsible for persisting the access key and refresh key obtained from the authorisation server (see [Authentication, Technical details](../../Details/Authentication.md) for technical details).
 
 The Go.Api provides a basic token store that will create an encrypted file that will hold the needed details. If you at some point need to control the token store it is possible to derive the basic store or implement the ITokenStore interface. 
  
