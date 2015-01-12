@@ -54,12 +54,12 @@ The Go.Api provides a basic token store that will create an encrypted file that 
     {
         static void Main(string[] args)
         {
-			var developerKey = "AA70F6AD-1QQE-4EBF-9DA7-510962CE7E46";
+			var applicationKey = "AA70F6AD-1QQE-4EBF-9DA7-510962CE7E46";
 			var clientKey = "1970F6AD-E35E-4EBF-9DA7-510962CE7E46";
 			
 			var authorizationSettings = new AuthorizationSettings
 			{
-			    DeveloperKey = integrationDeveloperKey,
+			    ApplicationKey = applicationKey,
 			    ClientKey = clientKey,
 			    TokenStore = new BasicTokenStore("my.tokenstore")
 			};
