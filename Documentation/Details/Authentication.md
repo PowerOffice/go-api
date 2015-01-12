@@ -16,7 +16,7 @@ The oAuth spesification documentation can be found [here](http://tools.ietf.org/
 
 # Prerequisites
 
-Before your integration component can be authorized to perform API calls, you must first [register as a developer](Registration.md) to obtain an *application key*.
+Before your integration component can be authorized to perform API calls, you must first [register as a developer](../Registration.md) to obtain an *application key*.
 
 
 # The authorization process
