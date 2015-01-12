@@ -1,6 +1,6 @@
 ﻿using GoApi.Core;
 
-namespace ApiAuthorization
+namespace AuthorizationDemo
 {
     public class Authorize
     {
@@ -14,7 +14,7 @@ namespace ApiAuthorization
         {
             return new AuthorizationSettings
             {
-                DeveloperKey = DemoSettings.DeveloperKey,
+                ApplicationKey = DemoSettings.ApplicationKey,
                 ClientKey = clientKey,
                 TokenStore = new BasicTokenStore(@"tokenstore.gks")
             };

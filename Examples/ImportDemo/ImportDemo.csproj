@@ -4,14 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{43CDED5F-0FDA-4B10-88B2-F14E6F41B27C}</ProjectGuid>
+    <ProjectGuid>{DA63315F-8626-435B-9F9C-11A9D4FC4DCA}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Customers</RootNamespace>
-    <AssemblyName>Customers</AssemblyName>
+    <RootNamespace>ImportDemo</RootNamespace>
+    <AssemblyName>ImportDemo</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,7 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GoApi">
+    <Reference Include="GoApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\One\Source\Client\bin\GoApi.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -45,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PayrollImport.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -52,9 +54,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ApiAuthorization\ApiAuthorization.csproj">
+    <ProjectReference Include="..\AuthorizationDemo\AuthorizationDemo.csproj">
       <Project>{e5e241b8-06ac-4106-a340-3eb6adde0d5f}</Project>
-      <Name>ApiAuthorization</Name>
+      <Name>AuthorizationDemo</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

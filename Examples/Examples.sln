@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customers", "Customers\Customers.csproj", "{43CDED5F-0FDA-4B10-88B2-F14E6F41B27C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerDemo", "CustomerDemo\CustomerDemo.csproj", "{43CDED5F-0FDA-4B10-88B2-F14E6F41B27C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Import", "Import\Import.csproj", "{DA63315F-8626-435B-9F9C-11A9D4FC4DCA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportDemo", "ImportDemo\ImportDemo.csproj", "{DA63315F-8626-435B-9F9C-11A9D4FC4DCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiAuthorization", "ApiAuthorization\ApiAuthorization.csproj", "{E5E241B8-06AC-4106-A340-3EB6ADDE0D5F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorizationDemo", "AuthorizationDemo\AuthorizationDemo.csproj", "{E5E241B8-06AC-4106-A340-3EB6ADDE0D5F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

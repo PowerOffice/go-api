@@ -1,13 +1,13 @@
-﻿namespace ApiAuthorization
+﻿namespace AuthorizationDemo
 {
     public class DemoSettings
     {
         /// <summary>
-        ///     The developer key.
+        ///     The application key.
         /// 
-        ///     To obtain a key you must register as a Integration Partner at http://api.go.poweroffice.net
+        ///     To obtain an application key you must register as a Integration Partner at http://api.go.poweroffice.net
         /// </summary>
-        public static string DeveloperKey = "1970F6AD-E35E-4EBF-9DA7-510962CE7E46";
+        public static string ApplicationKey = "1970F6AD-E35E-4EBF-9DA7-510962CE7E46";
 
         /// <summary>
         ///     A client key. This key is to the generic test client in the PowerOffice GO Development Test Environment

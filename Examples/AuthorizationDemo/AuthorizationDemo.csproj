@@ -7,8 +7,8 @@
     <ProjectGuid>{E5E241B8-06AC-4106-A340-3EB6ADDE0D5F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ApiAuthorization</RootNamespace>
-    <AssemblyName>ApiAuthorization</AssemblyName>
+    <RootNamespace>AuthorizationDemo</RootNamespace>
+    <AssemblyName>AuthorizationDemo</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,8 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GoApi">
-      <HintPath>..\..\..\One\Source\Client\bin\GoApi.dll</HintPath>
+    <Reference Include="GoApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\One\Source\Client\bin\GoApi.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

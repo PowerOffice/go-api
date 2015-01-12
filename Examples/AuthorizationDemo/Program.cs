@@ -1,7 +1,7 @@
 ﻿using System;
 using GoApi.Core;
 
-namespace ApiAuthorization
+namespace AuthorizationDemo
 {
     internal class Program
     {

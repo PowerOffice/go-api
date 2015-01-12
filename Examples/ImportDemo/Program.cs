@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Import
+namespace ImportDemo
 {
     internal class Program
     {

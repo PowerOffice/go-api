@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
-using ApiAuthorization;
+using AuthorizationDemo;
 using GoApi.Party;
 
-namespace Customers
+namespace CustomerDemo
 {
     internal class Program
     {
@@ -20,7 +20,6 @@ namespace Customers
 
             Console.WriteLine("Get Customer with Vat Number: " + vatNumber);
 
-            //var customer = customerService.GetByVatNumber(vatNumber);
             var customer = customerService.GetAll().FirstOrDefault(c => c.VatNumber == vatNumber);
             if (customer != null)
             {
@@ -44,6 +43,15 @@ namespace Customers
                 Console.WriteLine();
             }
 
+            // Get a list of customers starting with Power (restricted to 50 rows)
+            Console.WriteLine("Getting customers with name starting with \"Power\". Max 50");
+            var customers = customerService.GetAll().Where(c => c.Name.StartsWith("Power")).Skip(0).Take(50);
+            foreach (var customer1 in customers)
+            {
+                Console.WriteLine(customer1.Name);
+            }
+
+            
             // Wait for user input
             Console.ReadKey();
         }
