@@ -16,6 +16,8 @@ Once your PowerOffice Go user has been activated, you can register an applicatio
 
 [Register your application here.](http://api.poweroffice.net/register)
 
+### Application Key
+
 When you register your application you will receive an *application key*. This key is used to request authorization when performing API calls.
 
 ## Client activation
@@ -23,7 +25,7 @@ When you register your application you will receive an *application key*. This k
 To allow your application to access a PowerOffice Go client the administrator of the client must grant your application access rights by activating it in the PowerOffice Go *extensions settings*.
 
 
-See [here](todo:) for instructions on how a user can activate an application for a PowerOffice Go client. 
+See [here](http://) for instructions on how a user can activate an application for a PowerOffice Go client. 
 
 ### Client Key
 When the user has activated your application, the user will see a *client key* in PowerOffice Go. This key identifies the PowerOffice Go client for your application.

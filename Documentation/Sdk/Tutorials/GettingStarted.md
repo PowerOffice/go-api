@@ -15,7 +15,7 @@ TODO: Describe and screenshot New project, Console application, .NET Framework 4
 
 The first thing we must do is to add the PowerOffice Go SDK NuGet package:
 
-[Instructions on how to install the PowerOffice Go SDK NuGet Package](NuGetPackage.md)
+[Instructions on how to install the PowerOffice Go SDK NuGet Package](../NuGetPackage.md)
  
 # Add our first code file
 

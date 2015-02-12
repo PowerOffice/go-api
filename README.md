@@ -8,11 +8,11 @@ Welcome to the PowerOffice Go API / SDK.
 
 In the following sections you should find the information needed to get started using the PowerOffice Go API:
 
-[Registration and Client activation](Documentation/Registration.md)
-[Download and install C# SDK](Sdk/NuGetPackage.md)
-[SDK Introduction](Sdk/Introduction.md)
-[Read about the concepts](Sdk/Concepts.md)
-[Tutorials](Sdk/Tutorials/GettingStarted.md)
+- [Registration and Client activation](Documentation/Registration.md)
+- [Download and install C# SDK](Documentation/Sdk/NuGetPackage.md)
+- [SDK Introduction](Documentation/Sdk/Introduction.md)
+- [Read about the concepts](Documentation/Sdk/Concepts.md)
+- [Tutorials](Documentation/Sdk/Tutorials/GettingStarted.md)
  
 
 ## Documentation
