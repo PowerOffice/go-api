@@ -1,4 +1,5 @@
 ﻿using GoApi.Core;
+using GoApi.Global;
 
 namespace AuthorizationDemo
 {
@@ -12,11 +13,13 @@ namespace AuthorizationDemo
         /// <returns>AuthorizationSettings.</returns>
         public static AuthorizationSettings CreateAuthorizationSettings(string clientKey)
         {
+            GoApi.Global.Settings.Mode = Settings.EndPointMode.Debug;
+
             return new AuthorizationSettings
             {
                 ApplicationKey = DemoSettings.ApplicationKey,
                 ClientKey = clientKey,
-                TokenStore = new BasicTokenStore(@"tokenstore.gks")
+                TokenStore = new BasicTokenStore(@"tokenstore2.gks")
             };
         }
 

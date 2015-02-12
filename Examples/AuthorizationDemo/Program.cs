@@ -1,4 +1,5 @@
 ﻿using System;
+using GoApi;
 using GoApi.Core;
 
 namespace AuthorizationDemo
@@ -6,23 +7,31 @@ namespace AuthorizationDemo
     internal class Program
     {
         /// <summary>
-        ///     The purpose of this demo is to test if the PowerOffice GO Authentication server will allow us
+        ///     The purpose of this demo is to test if the PowerOffice Go Authentication server will allow us
         ///     to be authorized to access the PowerOffice GO API.
         /// </summary>
         private static void Main(string[] args)
         {
-            // Create authorization settings for the test client
-            Console.WriteLine("Setting up authorization settings..");
-            var authorizationSettings = Authorize.CreateAuthorizationSettings(DemoSettings.TestClientKey);
+            try
+            {
+                // Create authorization settings for the test client
+                Console.WriteLine("Setting up authorization settings..");
+                var authorizationSettings = Authorize.CreateAuthorizationSettings(DemoSettings.TestClientKey);
 
-            // Request authorization from the PowerOffice GO authentication server
-            Console.WriteLine("Requesting authorization..");
-            var authorization = new Authorization(authorizationSettings);
+                // Request authorization from the PowerOffice GO authentication server
+                Console.WriteLine("Requesting authorization..");
+                var api = new Go(authorizationSettings);
 
-            // If no exceptions is thrown by now, we have sucessfully been authorized to access the PowerOffice GO API
-            Console.WriteLine("Authorization granted!");
+                // If no exceptions is thrown by now, we have sucessfully been authorized to access the PowerOffice GO API
+                Console.WriteLine("Authorization granted!");
+            }
+            catch (ApiException e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
 
             // Wait for user input
+            Console.WriteLine("\n\nPress any key...");
             Console.ReadKey();        
         }
     }
