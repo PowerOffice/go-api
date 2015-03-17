@@ -14,7 +14,7 @@ Each application that will connect to PowerOffice Go using the Go-Api must be re
 
 Once your PowerOffice Go user has been activated, you can register an application and receive an *application key*.
 
-[Register your application here.](http://api.poweroffice.net/register)
+[Register your application here.](http://api.poweroffice.net/web/register)
 
 ### Application Key
 

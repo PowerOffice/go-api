@@ -16,7 +16,13 @@ namespace AuthorizationDemo
             {
                 // Create authorization settings for the test client
                 Console.WriteLine("Setting up authorization settings..");
-                var authorizationSettings = Authorize.CreateAuthorizationSettings(DemoSettings.TestClientKey);
+                // Set up authorization settings
+                var authorizationSettings = new AuthorizationSettings
+                {
+                    ApplicationKey = "<You Application Key Here>",
+                    ClientKey = "<PowerOffice Go Client Key Here>",
+                    TokenStore = new BasicTokenStore(@"my.tokenstore")
+                };
 
                 // Request authorization from the PowerOffice GO authentication server
                 Console.WriteLine("Requesting authorization..");

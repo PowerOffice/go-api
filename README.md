@@ -26,6 +26,12 @@ Sdk/Tutorial | SDK Tutorials
 Details      | Technical details needed if you don't use the C# SDK
 
 
+## Tutorials
+Please look at the tutorials for a quick introduction on how to use the C# PowerOffice Go SDK
+
+- [Getting Started Tutorial](Documentation/Sdk/Tutorials/GettingStarted.md)
+
+
 ## Examples
 
 In the Examples folder you find C# examples demonstrating common tasks.

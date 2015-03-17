@@ -20,16 +20,19 @@ The entire Documentation and C# Examples can be downloaded from our [github proj
 
 You can download everything as a [zip file](https://github.com/PowerOffice/go-api/archive/master.zip)
 
+### Tutorials
+Please look at the tutorials for a quick introduction on how to use the C# PowerOffice Go SDK
+
+[Getting Started Tutorial](Tutorials/GettingStarted.md)
+
 ### Examples
 
-We maintain example C# projects for the most common scenarios on our [github project.](https://github.com/PowerOffice/go-api)
+We maintain example C# projects for the most common scenarios in our [github project.](https://github.com/PowerOffice/go-api)
 
 ### Reference Documentation
 The SDK reference documentation is available online at [api.poweroffice.net](http://api.poweroffice.net/web/documentation)
 Or as a compiled help file (chm) from [github.](https://github.com/PowerOffice/go-api/raw/master/Documentation/Sdk/GO%20SDK.chm)
 
-### Tutorials
-[Getting Started](Tutorials/GettingStarted.md)
 
 # Development enviroment / Sandbox
 

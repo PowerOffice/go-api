@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using AuthorizationDemo;
 using GoApi;
 using GoApi.Core;
 using GoApi.Party;
@@ -16,8 +15,16 @@ namespace CustomerDemo
         {
             try
             {
+                // Set up authorization settings
+                var authorizationSettings = new AuthorizationSettings
+                {
+                    ApplicationKey = "<You Application Key Here>",
+                    ClientKey = "<PowerOffice Go Client Key Here>",
+                    TokenStore = new BasicTokenStore(@"my.tokenstore")
+                };
+
                 // Initialize the PowerOffice Go API and request authorization
-                var api = new Go(Authorize.TestClientAuthorization());
+                var api = new Go(authorizationSettings);
 
                 // Create new customer
                 Console.WriteLine("Create new customer...");
@@ -28,21 +35,21 @@ namespace CustomerDemo
                 };
                 api.Customer.Save(myNewCustomer);
 
-                PrintCustomer(myNewCustomer);
+                Console.WriteLine("Name: " + myNewCustomer.Name);
 
                 // Get a list of customers starting with Power (restricted to 50 rows)
                 Console.WriteLine("Getting customers with name starting with \"My\". Max 50...");
                 var customers = api.Customer.Get().Where(c => c.Name.ToUpper().StartsWith("MY")).Skip(0).Take(50);
                 foreach (var customer1 in customers)
-                    PrintCustomer(customer1);
-
+                    Console.WriteLine("Name: " + customer1.Name);
+                
                 // Look up a customer with a given Vat number
                 Console.WriteLine("Get Customer with Vat Number: " + myNewCustomer.VatNumber);
 
                 var customer = api.Customer.Get().FirstOrDefault(c => c.VatNumber == myNewCustomer.VatNumber);
                 if (customer != null)
-                    PrintCustomer(customer);
-
+                    Console.WriteLine("Name: " + customer.Name);
+                
                 // Change customer name
                 customer.Name = "My Customer AS";
 
@@ -50,8 +57,8 @@ namespace CustomerDemo
                 Console.WriteLine("Saving...");
                 customer = api.Customer.Save(customer);
                 if (customer != null)
-                    PrintCustomer(customer);
-
+                    Console.WriteLine("Name: " + customer.Name);
+                
                 // Delete the customer
                 Console.WriteLine("Deleting...");
                 api.Customer.Delete(customer);
@@ -66,18 +73,6 @@ namespace CustomerDemo
             // Wait for user input
             Console.WriteLine("\n\nPress any key...");
             Console.ReadKey();
-        }
-
-        /// <summary>
-        ///     Prints customer info to the console.
-        /// </summary>
-        /// <param name="customer">The customer.</param>
-        private static void PrintCustomer(Customer customer)
-        {
-            Console.WriteLine("Id: " + customer.Id);
-            Console.WriteLine("Name: " + customer.Name);
-            Console.WriteLine("Vat Number: " + customer.VatNumber);
-            Console.WriteLine();
         }
     }
 }

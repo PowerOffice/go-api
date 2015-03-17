@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AuthorizationDemo;
 using GoApi;
+using GoApi.Core;
 
 namespace ImportDemo
 {
@@ -13,7 +10,15 @@ namespace ImportDemo
         public static void ListUnpostedImports()
         {
             // Initialize the PowerOffice Go API and request authorization
-            var api = new Go(Authorize.TestClientAuthorization());
+            // Set up authorization settings
+            var authorizationSettings = new AuthorizationSettings
+            {
+                ApplicationKey = "<You Application Key Here>",
+                ClientKey = "<PowerOffice Go Client Key Here>",
+                TokenStore = new BasicTokenStore(@"my.tokenstore")
+            };
+            
+            var api = new Go(authorizationSettings);
 
             // Get list of imports
             Console.WriteLine("List of unposted imports:");

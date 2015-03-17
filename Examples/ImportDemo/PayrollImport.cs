@@ -1,6 +1,6 @@
 ﻿using System;
-using AuthorizationDemo;
 using GoApi;
+using GoApi.Core;
 using GoApi.Import;
 
 namespace ImportDemo
@@ -12,8 +12,16 @@ namespace ImportDemo
         /// </summary>
         public static void PayrollImportDemo()
         {
+            // Set up authorization settings
+            var authorizationSettings = new AuthorizationSettings
+            {
+                ApplicationKey = "<You Application Key Here>",
+                ClientKey = "<PowerOffice Go Client Key Here>",
+                TokenStore = new BasicTokenStore(@"my.tokenstore")
+            };
+
             // Initialize the PowerOffice Go API and request authorization
-            var api = new Go(Authorize.TestClientAuthorization());
+            var api = new Go(authorizationSettings);
 
             // Create the import object and upload it to the server
             var import = CreateAndSaveImport(api);
