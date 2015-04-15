@@ -2,8 +2,6 @@
 
 Welcome to the PowerOffice Go API / SDK.
 
-> **This is PRE RELEASE DOCUMENTATION** and subject to change
-
 ## Getting started
 
 In the following sections you should find the information needed to get started using the PowerOffice Go API:

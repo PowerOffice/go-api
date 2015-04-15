@@ -7,6 +7,9 @@ namespace ImportDemo
 {
     public class ImportList
     {
+        /// <summary>
+        /// Lists the unposted imports.
+        /// </summary>
         public static void ListUnpostedImports()
         {
             // Initialize the PowerOffice Go API and request authorization

@@ -9,7 +9,7 @@ namespace CustomerDemo
     internal class Program
     {
         /// <summary>
-        ///     The purpose of this demo is to test some of the Customer functioniallity available to PowerOffice Go users.
+        ///     The purpose of this demo is to test some of the Customer functionallity available to PowerOffice Go users.
         /// </summary>
         private static void Main(string[] args)
         {

@@ -5,7 +5,7 @@ using GoApi.Import;
 
 namespace ImportDemo
 {
-    internal class PayrollImport
+    public class PayrollImport
     {
         /// <summary>
         ///     This is is very simple demo of how to create a payroll import.
