@@ -23,7 +23,7 @@ namespace ProjectDemo
                 // Initialize the PowerOffice Go API and request authorization
                 var api = new Go(authorizationSettings);
 
-                // Create new customer
+                // Create new Project
                 Console.WriteLine("Create new project...");
                 var myNewProject = new Project
                 {
@@ -34,7 +34,7 @@ namespace ProjectDemo
 
                 Console.WriteLine("Name: " + myNewProject.Name);
 
-                // Get a list of customers starting with Power (restricted to 50 rows)
+                // Get a list of projects starting with My (restricted to 50 rows)
                 Console.WriteLine("Getting projects with name starting with \"My\". Max 50...");
                 var customers = api.Project.Get().Where(c => c.Name.ToUpper().StartsWith("MY")).Skip(0).Take(50);
                 foreach (var customer1 in customers)
