@@ -5,7 +5,7 @@ Registration and Client activation
 
 You must have a PowerOffice Go user before you can register your application.
 
-Currently you must request access to PowerOffice Go [here](http://www.poweroffice.no/go/) or an existing user must invite you.
+Currently you can request access to PowerOffice Go [here](http://www.poweroffice.no/go/) or an existing user must invite you. If you want a test user for API testing, don't hesitate to contact us on go-api@poweroffice.no.
 
 
 ## Registering your application
