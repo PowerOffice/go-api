@@ -14,7 +14,11 @@ namespace ImportDemo
             try
             {
                 // Run the payroll import demo
-                PayrollImport.PayrollImportDemo();
+                //PayrollImport.PayrollImportDemo();
+
+                //CustomerInvoicesImport.CustomerInvoicesImportDemo();
+                //ImportList.ListUnpostedImports();
+                SalesOrderImport.SalesOrderImportDemo();
             }
             catch (ApiException e)
             {

@@ -32,6 +32,9 @@ namespace ImportDemo
             // The user can post the journal manually from the PowerOffice GO user interface,
             // or the journal can be posted by code.
             PostImport(api, import);
+
+            Console.WriteLine("Demo finished! Press any key to exit...");
+            Console.ReadKey();
         }
 
         /// <summary>
