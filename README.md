@@ -39,9 +39,12 @@ Currently we provide the following examples:
 Example             | Task
 :-------------------|:---------------
 AuthorizationDemo   | Connect to the authorization server, and retreive authorization.
-CustomerDemo        | Find a customer by Vat number, update customer and get list of customers
-ImportDemo          | Upload and post a Payroll Journal
-ErrorHandling       | Demonstrates how to handle common error scenarios
+CustomerDemo        | Find a customer by Vat number, update customer and get list of customers.
+ImportDemo          | Upload and post a Payroll Journal, Sales Order Import and CustomerInvoicesImport.
+ErrorHandling       | Demonstrates how to handle common error scenarios.
+ProjectDemo         | Creating, Editing, Deleting and Querying Projects.
+ProductDemo         | Creating, Editing, Deleting and Querying Products and ProductGroups.
+Reporting           | Listing TrialBalance at a given date and listing all transactions on a given account between two dates.
 
 ## Support
 
