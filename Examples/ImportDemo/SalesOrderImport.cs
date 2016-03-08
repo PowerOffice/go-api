@@ -172,6 +172,10 @@ namespace ImportDemo
 
             //Creating a sales order line for 5x product 240 with 10% discount
             var firstOrderLine = new SalesOrderLine("240", 5, 10);
+
+            //By setting SalesOrderLineUnitPrice we can override product price for this sales order line
+            firstOrderLine.SalesOrderLineUnitPrice = 1000;
+
             salesOrder.AddSalesOrderLine(firstOrderLine);
 
             //Optional: Creating a sales order description line
