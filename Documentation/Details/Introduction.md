@@ -11,4 +11,6 @@ If you use the C# GO-API SDK or a third party oAuth client library, you should n
 [Authentication](Authentication.md)
 
 [Api Calls](ApiCalls.md)
+
+[Filtering](Filtering.md)
  

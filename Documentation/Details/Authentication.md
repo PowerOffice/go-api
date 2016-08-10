@@ -61,10 +61,6 @@ The response from the authorization server would then look something like this:
 
 The *access token*, expiration date/time and the refresh token should be safely stored somewhere to be reused on subsequent API requestes. The *access token* can be reused by new sessions until it expires. A new *access token* can then be requested using the *refresh token*.
 
-## Requesting a new access token using the refresh token
-
-**TODO: Details not documented yet**
-
 
 ## Calling a GO-API function
 
@@ -72,7 +68,7 @@ After an *access token* has been obtained, you can use it to call GO-API functio
 
 A typical GO-API request would look something like this:
 
-	GET https://api.go.poweroffice.net/customer/?organizationNo=123456789 HTTP/1.1
+	GET https://api.poweroffice.net/customer/?organizationNo=123456789 HTTP/1.1
 	Authorization: Bearer JSM8aIY5SQofcuLZnOkTvuTL5N-RLepbX2xdUIE39zW-JhCQDyqAnXjUMW1nbfA2u3My4iWny5pA1u_wceV64WWPj9UUo927cp5AKojxbkH8Wbjnie2656VXzZ6nnftYl55j3Dz-5t_a8YPHgaPGkMXJ6tus2sagtsrb6MiPoxD36dGyPiefmLVthO9DfvM2UmDGXCwjV9yPI5g4QNEqvOmLwGAWnjo8s0oVsT7IMhsBZQe4rFIUNRkuF1-qwySMy_eMpbfoXKaiTYMowDb8f8pxMuWGn7HOLS2vEXq72m-Bl95hKNcGRbFcww1WFGDy7_0q3QaIxHxz4sImFZf5xaD0cxDt2YFMlaD9UjheR6OfKjcYbhg7PK_wNh-VNzTNJKMUu8zdRTiO28QBxLq91TQHnRaS4_V-FYhxOiR3LyGFDzBXzBZyUfVd5_GxjT4H8JdPGoqz85ffZRm2YetBCnPP_ue5XPvSoHhKX_ANsxH8Tf7bn4QVChiR3oS4KTTs
 
 The response would then be something like this:

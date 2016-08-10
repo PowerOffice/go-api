@@ -14,7 +14,7 @@ Each application that will connect to PowerOffice Go using the Go-Api must be re
 
 Once your PowerOffice Go user has been activated, you can register an application and receive an *application key*.
 
-Currenly we only support applications through e-mail. To apply for an application to use PowerOffice Go API, send an e-mail to go-api@poweroffice.no stating your company name, system name, who you're representing, contact e-mail address and the purpose of the integration.
+>Currenly you must email us to receive an applicaiton key. To apply for an application to use PowerOffice Go API, send an e-mail to go-api@poweroffice.no stating your company name, system name, who you're representing, contact e-mail address and the purpose of the integration.
 
 ### Application Key
 
