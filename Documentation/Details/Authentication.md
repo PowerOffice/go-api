@@ -8,7 +8,7 @@ If you use the C# GO-API SDK or a third party oAuth client library, you should n
 
 ### Third party oAuth client libraries
 
-If you use a third party oAuth library to assist with the authentication process, the *application key* is provided in as the *client key* value and the *client key* equals the oAuth *client secret*. 
+If you use a third party oAuth library to assist with the authentication process, the *application key* is provided as the *client key* value, and the *client key* must be provided as the *client secret*. 
 
 A list of oAuth client libraries can be found on at [oauth.net](http://oauth.net/2/).
 
@@ -61,6 +61,25 @@ The response from the authorization server would then look something like this:
 
 The *access token*, expiration date/time and the refresh token should be safely stored somewhere to be reused on subsequent API requestes. The *access token* can be reused by new sessions until it expires. A new *access token* can then be requested using the *refresh token*.
 
+To obtain a new access token using the refresh token, the request should look like this
+
+	POST https://go.poweroffice.net/OAuth/Token HTTP/1.1
+	Content-Type: application/x-www-form-urlencoded; charset=utf-8
+
+	grant_type=refresh_token&client_id=<YOUR APPLICATION KEY>&client_secret=<CLIENT KEY>&refresh_token=<YOUR REFRESH TOKEN>
+
+And the server will then respond with:
+
+	HTTP/1.1 200 OK
+	Content-Type: application/json;charset=UTF-8
+	Access-Control-Allow-Origin: *
+	
+	{
+  		"access_token": "P59uTHoMPo-YLFIrCs9WqgP4Tj7QDgGigkoH_K9dP6eDhBsuJLY7z_UTr6FSa9qSvTzfthIaiizkcr3jsMR43jTw0AnTJMd3A-0NNT7hFUhVIVeptU4Q8e4UeyZ9HG7i2Rv33saaEK-SW_PP1ollqe9sbfDgIvzAo9oBVZA9Q5NPf-jygkMa7Xk79CjV7cDHM3eEOaPPRGk47ObwBwXjvMVmVECtbRxkz11_lMvRaYXZzKi66PNTkW49X8lAMqWAb5tJAVhFs4HjBdEVAO0fZRvKT5_DOSUirgODQDrOLA1XLLJurX-ySQfU46vFRamuA9vPP4ctm-WKss5REn0-Y9u_dsKPZ-gveWphjj8RP3U055Z1ggaaRVFAsEvmHD9nOXSJhpIQXn3o0BhCXOrsBbI1kaMq2UiHPi1cjP2XIal7MJbxsifIEe79Jmcvot6d-8mMdd3Wu8tT5dlNjVY0-bKYtwsWiSDDEJJNYOskdbj32KOw",
+  		"token_type": "bearer",
+  		"expires_in": 599,
+  		"refresh_token": "8NKteaRlCuqriFubPpQyx0w_bp8gw3NY3UUolS4HrksQAvaCxUtUaSFDN4gz0JO3vAvUa-Cg05LtZ6LqUC4JO61z0tbeoKd41POth4NXDmMcC23Pq9VK9j18EjesYj2Z1JWH9eJQFwZnwfolpfZccE1K7xnhMfcKvU3s7YptDXEoaA4b6YX-VCi7E3Q7J6bKUu_Teow5u8Wc_uzUX4mTPqBcFyoRLyijwPvLYFCCfWB6cVskQJq0imEkiaJQXMMIbDOj4fUfJ03wI0SsiKhjJVh96J8xYpTNpAT5Amewl6LzRleXabh8vbiHfu83aqcA58lQHi2c-RyTDGlVhKlMaqQSO7Jw7C9SJsM85yX11QySc460Am6oSJFJj0DWtZPFuhQz0yn8oo5ucto2QD_TBT4XuTE0E6KVtVJnPafj7G5rP0ggoKSL8iiHvhfQpopAhKkhi-VK4RtcBUhlEA3xkkPbx44p_e7kj_iD3vBDP1nvtCCZ"
+	}
 
 ## Calling a GO-API function
 
