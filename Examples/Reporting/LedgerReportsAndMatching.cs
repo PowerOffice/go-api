@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using GoApi;
 using GoApi.Core;
 using GoApi.Reporting.Ledger;
@@ -28,11 +25,11 @@ namespace Reporting
             //PrintOpenItems(api);
 
             //Create a match request with all IDs that you want matched or unmatched.
-            var matchRequest = new MatchRequest(DateTime.Today, new long[] { 2612317, 2890048 }); 
+            var matchRequest = new MatchRequest(DateTime.Today, new long[] {2612317, 2890048});
 
             //Request to clear matches
             api.Reporting.CustomerLedger.UnmatchEntries(matchRequest);
-            
+
             //Request to match entries together
             api.Reporting.CustomerLedger.MatchEntries(matchRequest);
 
@@ -40,12 +37,13 @@ namespace Reporting
         }
 
         /// <summary>
-        /// Prints the statement for past 14 days - this includes all customer ledger transactions.
+        ///     Prints the statement for past 14 days - this includes all customer ledger transactions.
         /// </summary>
         /// <param name="api">The API.</param>
         private static void PrintStatement(Go api)
         {
-            var customerLedgerLines = api.Reporting.CustomerLedger.GetStatement(DateTime.Today.AddDays(-14), DateTime.Today).ToList();
+            var customerLedgerLines =
+                api.Reporting.CustomerLedger.GetStatement(DateTime.Today.AddDays(-14), DateTime.Today).ToList();
             foreach (var customerLedgerEntry in customerLedgerLines)
             {
                 Console.WriteLine(customerLedgerEntry.Id + " | " + customerLedgerEntry.Customer.Name + "(" +
@@ -57,7 +55,7 @@ namespace Reporting
         }
 
         /// <summary>
-        /// Prints all open items (all transactions on customer ledger that haven't been matched out
+        ///     Prints all open items (all transactions on customer ledger that haven't been matched out
         /// </summary>
         /// <param name="api">The API.</param>
         private static void PrintOpenItems(Go api)
@@ -72,6 +70,5 @@ namespace Reporting
                                   customerLedgerEntry.MatchId);
             }
         }
-
     }
 }
