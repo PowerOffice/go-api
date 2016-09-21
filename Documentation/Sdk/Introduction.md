@@ -30,8 +30,7 @@ Please look at the tutorials for a quick introduction on how to use the C# Power
 We maintain example C# projects for the most common scenarios in our [github project.](https://github.com/PowerOffice/go-api)
 
 ### Reference Documentation
-The SDK reference documentation is available online at [api.poweroffice.net](http://api.poweroffice.net/web/)
-Or as a compiled help file (chm) from [github.](https://github.com/PowerOffice/go-api/raw/master/Documentation/Sdk/GO%20SDK.chm)
+The SDK reference documentation is available as a compiled help file (chm) from [github.](https://github.com/PowerOffice/go-api/raw/master/Documentation/Sdk/GO%20SDK.chm)
 
 
 # Development enviroment / Sandbox
