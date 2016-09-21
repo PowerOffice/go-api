@@ -39,14 +39,3 @@ Or as a compiled help file (chm) from [github.](https://github.com/PowerOffice/g
 ## Supported development environment
 - Microsoft Visual Studio 2013 or later
 - .NET Framework 4.5.1 or later
-
-## Sandbox
-The Go API SDK can be set to work within a sandboxed environment through the global setting
-```csharp
-GoApi.Global.Settings.Mode = Settings.EndPointMode.Sandbox;
-``` 
-> *** HOWEVER THE SANDBOX ENVIRONMENT IS CURRENLTY NOT SUPPORTED ***
-
-
-
-
