@@ -33,7 +33,7 @@ We maintain example C# projects for the most common scenarios in our [github pro
 The SDK reference documentation is available as a compiled help file (chm) from [github.](https://github.com/PowerOffice/go-api/raw/master/Documentation/Sdk/GO%20SDK.chm)
 
 
-# Development enviroment / Sandbox
+# Development enviroment
 
 ## Supported development environment
 - Microsoft Visual Studio 2013 or later
