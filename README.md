@@ -21,6 +21,8 @@ ErrorHandling       | Demonstrates how to handle common error scenarios.
 ProjectDemo         | Creating, Editing, Deleting and Querying Projects.
 ProductDemo         | Creating, Editing, Deleting and Querying Products and ProductGroups.
 Reporting           | Listing TrialBalance at a given date and listing all transactions on a given account between two dates.
+Payroll	            | Querying pay items and uploading salary lines that will be added to the next payroll.
+OutgoingInvoice     | Creating, editing and querying outgoing invoices.
 
 ## Support
 
