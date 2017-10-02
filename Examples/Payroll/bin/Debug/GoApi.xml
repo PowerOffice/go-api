@@ -4,6 +4,566 @@
         <name>GoApi</name>
     </assembly>
     <members>
+        <member name="T:GoApi.AccountingSettings.GeneralLedgerAccountService">
+            <summary>
+            GeneralLedgerAccountService that provides methods for querying and manipulating <see cref="T:GoApi.AccountingSettings.GeneralLedgerAccount"/>.
+            </summary>
+        </member>
+        <member name="M:GoApi.AccountingSettings.GeneralLedgerAccountService.#ctor(GoApi.Core.IAuthorization)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GoApi.AccountingSettings.GeneralLedgerAccountService"/> class.
+            </summary>
+            <param name="authorization">The authorization.</param>
+        </member>
+        <member name="T:GoApi.AccountingSettings.GeneralLedgerAccount">
+            <summary>
+            GeneralLedgerAccount representing an account on the general ledger for the client (Norwegian: Hovedbokskonto).
+            </summary>
+        </member>
+        <member name="P:GoApi.AccountingSettings.GeneralLedgerAccount.Id">
+            <summary>
+            Gets the identifier.
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:GoApi.AccountingSettings.GeneralLedgerAccount.Code">
+            <summary>
+            Gets or sets the code. This is a required property and the value has to be in the range 1000-9999.
+            </summary>
+            <value>The code.</value>
+        </member>
+        <member name="P:GoApi.AccountingSettings.GeneralLedgerAccount.Name">
+            <summary>
+            Gets or sets the name. Required property.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:GoApi.AccountingSettings.GeneralLedgerAccount.VatCode">
+            <summary>
+            Gets or sets the vat code.
+            </summary>
+            <value>The vat code.</value>
+        </member>
+        <member name="P:GoApi.AccountingSettings.GeneralLedgerAccount.IsVatCodeLockedAfterPosting">
+            <summary>
+            Gets or sets a value indicating whether this instance is vat code locked after posting.
+            </summary>
+            <value><c>null</c> if [is vat code locked after posting] contains no value, <c>true</c> if [is vat code locked after posting]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:GoApi.AccountingSettings.GeneralLedgerAccount.DepartmentCode">
+            <summary>
+            Gets or sets the department code.
+            </summary>
+            <value>The department code.</value>
+        </member>
+        <member name="P:GoApi.AccountingSettings.GeneralLedgerAccount.IsDepartmentRequired">
+            <summary>
+            Gets or sets a value indicating whether this instance is department required.
+            </summary>
+            <value><c>null</c> if [is department required] contains no value, <c>true</c> if [is department required]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:GoApi.AccountingSettings.GeneralLedgerAccount.ProjectCode">
+            <summary>
+            Gets or sets the project code.
+            </summary>
+            <value>The project code.</value>
+        </member>
+        <member name="P:GoApi.AccountingSettings.GeneralLedgerAccount.IsProjectRequired">
+            <summary>
+            Gets or sets a value indicating whether this instance is project required.
+            </summary>
+            <value><c>null</c> if [is project required] contains no value, <c>true</c> if [is project required]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:GoApi.AccountingSettings.GeneralLedgerAccount.CurrencyCode">
+            <summary>
+            Gets or sets the currency code.
+            </summary>
+            <value>The currency code.</value>
+        </member>
+        <member name="P:GoApi.AccountingSettings.GeneralLedgerAccount.IsActive">
+            <summary>
+            Gets or sets a value indicating whether this instance is active.
+            </summary>
+            <value><c>null</c> if [is active] contains no value, <c>true</c> if [is active]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:GoApi.AccountingSettings.GeneralLedgerAccount.LastChanged">
+            <summary>
+            Gets the last changed date.
+            </summary>
+            <value>The last changed date.</value>
+        </member>
+        <member name="P:GoApi.AccountingSettings.GeneralLedgerAccount.CreatedFromImportJournalId">
+            <summary>
+            Gets the created from import journal identifier.
+            </summary>
+            <value>The created from import journal identifier.</value>
+        </member>
+        <member name="T:GoApi.AccountingSettings.SubledgerNumberSeries">
+            <summary>
+            Class SubledgerNumberSeries representing a number range for subledger accounts (<see cref="T:GoApi.Party.Customer"/>/<see cref="T:GoApi.Party.Supplier"/>/<see cref="T:GoApi.Party.Employee"/>).
+            </summary>
+        </member>
+        <member name="P:GoApi.AccountingSettings.SubledgerNumberSeries.Id">
+            <summary>
+            Gets the identifier.
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:GoApi.AccountingSettings.SubledgerNumberSeries.Type">
+            <summary>
+            Gets the type indicating what kind of subledger accounts are represented in the number series.
+            </summary>
+            <value>The type.</value>
+        </member>
+        <member name="P:GoApi.AccountingSettings.SubledgerNumberSeries.FromInclusive">
+            <summary>
+            The minimum number subledger accounts in this number series can have.
+            </summary>
+            <value>From inclusive.</value>
+        </member>
+        <member name="P:GoApi.AccountingSettings.SubledgerNumberSeries.ToInclusive">
+            <summary>
+            The maximum number subledger accounts in this number series can have.
+            </summary>
+            <value>To inclusive.</value>
+        </member>
+        <member name="P:GoApi.AccountingSettings.SubledgerNumberSeries.GeneralLedgerAccountCode">
+            <summary>
+            Gets the general ledger account code subledger accounts in this series are posting on.
+            </summary>
+            <value>The general ledger account code.</value>
+        </member>
+        <member name="P:GoApi.AccountingSettings.SubledgerNumberSeries.Name">
+            <summary>
+            Gets the name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:GoApi.AccountingSettings.SubledgerNumberSeries.IsClientTrust">
+            <summary>
+            Gets or sets a value indicating whether this instance is client trust.
+            </summary>
+            <value><c>null</c> if [is client trust] contains no value, <c>true</c> if [is client trust]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:GoApi.AccountingSettings.SubledgerNumberSeriesService">
+            <summary>
+            SubledgerNumberSeriesService that provides methods for querying <see cref="T:GoApi.AccountingSettings.SubledgerNumberSeries"/>.
+            </summary>
+        </member>
+        <member name="M:GoApi.AccountingSettings.SubledgerNumberSeriesService.#ctor(GoApi.Core.IAuthorization)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GoApi.AccountingSettings.SubledgerNumberSeriesService"/> class.
+            </summary>
+            <param name="authorization">The authorization.</param>
+        </member>
+        <member name="M:GoApi.AccountingSettings.SubledgerNumberSeriesService.Get">
+            <summary>
+                Get <see cref="T:GoApi.AccountingSettings.SubledgerNumberSeries"/> by a LINQ expression as Queryable
+            </summary>
+            <returns>IQueryable&lt;SubledgerNumberSeries&gt;.</returns>
+        </member>
+        <member name="M:GoApi.AccountingSettings.SubledgerNumberSeriesService.Get(System.Guid)">
+            <summary>
+                Get a <see cref="T:GoApi.AccountingSettings.SubledgerNumberSeries"/> by its Id.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns>SubledgerNumberSeries.</returns>
+        </member>
+        <member name="T:GoApi.AccountingSettings.SubledgerNumberSeriesType">
+            <summary>
+            Enum SubledgerNumberSeriesType indicating what kind of subledger accounts are represented in the number series.
+            </summary>
+        </member>
+        <member name="F:GoApi.AccountingSettings.SubledgerNumberSeriesType.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:GoApi.AccountingSettings.SubledgerNumberSeriesType.Customer">
+            <summary>
+            The subledger number series contains <see cref="F:GoApi.AccountingSettings.SubledgerNumberSeriesType.Customer"/>
+            </summary>
+        </member>
+        <member name="F:GoApi.AccountingSettings.SubledgerNumberSeriesType.Supplier">
+            <summary>
+            The subledger number series contains <see cref="F:GoApi.AccountingSettings.SubledgerNumberSeriesType.Supplier"/>
+            </summary>
+        </member>
+        <member name="F:GoApi.AccountingSettings.SubledgerNumberSeriesType.Employee">
+            <summary>
+            The subledger number series contains <see cref="F:GoApi.AccountingSettings.SubledgerNumberSeriesType.Employee"/>
+            </summary>
+        </member>
+        <member name="T:GoApi.Bank.BankTransferService">
+            <summary>
+            Bank transfer service providing methods for querying, creating and deleting <see cref="T:GoApi.Bank.BankTransfer"/>.
+            </summary>
+        </member>
+        <member name="M:GoApi.Bank.BankTransferService.#ctor(GoApi.Core.IAuthorization)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GoApi.Bank.BankTransferService"/> class.
+            </summary>
+            <param name="authorization">The authorization.</param>
+        </member>
+        <member name="T:GoApi.Bank.BankTransferStatus">
+            <summary>
+            Enum BankTransferStatus
+            </summary>
+        </member>
+        <member name="F:GoApi.Bank.BankTransferStatus.AwaitingAuthorization">
+            <summary>
+            The bank transfer is created, but not yet authorized by a user in PowerOffice Go.
+            </summary>
+        </member>
+        <member name="F:GoApi.Bank.BankTransferStatus.Authorized">
+            <summary>
+            The bank transfer is authorized by a user and is awaiting remittance.
+            </summary>
+        </member>
+        <member name="F:GoApi.Bank.BankTransferStatus.Completed">
+            <summary>
+            The bank transfer is completed.
+            </summary>
+        </member>
+        <member name="F:GoApi.Bank.BankTransferStatus.Failed">
+            <summary>
+            The payment failed.
+            </summary>
+        </member>
+        <member name="T:GoApi.Bank.ClientBankAccount">
+            <summary>
+            Class ClientBankAccount representing a Bank Account on this client in PowerOffice Go.
+            </summary>
+        </member>
+        <member name="P:GoApi.Bank.ClientBankAccount.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:GoApi.Bank.ClientBankAccount.Code">
+            <summary>
+            Gets or sets the code.
+            </summary>
+            <value>The code.</value>
+        </member>
+        <member name="P:GoApi.Bank.ClientBankAccount.BicSwift">
+            <summary>
+            Gets or sets the bic swift.
+            </summary>
+            <value>The bic swift.</value>
+        </member>
+        <member name="P:GoApi.Bank.ClientBankAccount.BankName">
+            <summary>
+            Gets or sets the name of the bank.
+            </summary>
+            <value>The name of the bank.</value>
+        </member>
+        <member name="P:GoApi.Bank.ClientBankAccount.GeneralLedgerAccountCode">
+            <summary>
+            Gets or sets the general ledger account code.
+            </summary>
+            <value>The general ledger account code.</value>
+        </member>
+        <member name="P:GoApi.Bank.ClientBankAccount.CountryCode">
+            <summary>
+            Gets or sets the ISO 3166-1 alfa-2 country code.
+            </summary>
+            <value>The country code.</value>
+        </member>
+        <member name="P:GoApi.Bank.ClientBankAccount.CurrencyCode">
+            <summary>
+            Gets or sets the ISO 4217 currency code.
+            </summary>
+            <value>The currency code.</value>
+        </member>
+        <member name="P:GoApi.Bank.ClientBankAccount.HasOutgoingPaymentService">
+            <summary>
+            Gets a value indicating whether this instance has an outgoing payment service.
+            </summary>
+            <value><c>true</c> if this instance has outgoing payment service; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:GoApi.Bank.ClientBankAccount.HasIncomingPaymentService">
+            <summary>
+            Gets a value indicating whether this instance has an incoming payment service.
+            </summary>
+            <value><c>true</c> if this instance has incoming payment service; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:GoApi.Bank.ClientBankAccount.IsClientTrustAccount">
+            <summary>
+            Gets or sets a value indicating whether this instance is a client trust account.
+            </summary>
+            <value><c>true</c> if this instance is a client trust account; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:GoApi.Bank.BankTransfer">
+            <summary>
+            BankTransfer representing a transaction of money from one of the client's bank accounts to another bank account.
+            </summary>
+        </member>
+        <member name="P:GoApi.Bank.BankTransfer.Id">
+            <summary>
+            Gets the identifier.
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:GoApi.Bank.BankTransfer.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:GoApi.Bank.BankTransfer.ReceiverName">
+            <summary>
+            Gets or sets the name of the receiver.
+            </summary>
+            <value>The name of the receiver.</value>
+        </member>
+        <member name="P:GoApi.Bank.BankTransfer.ReceiverCountryCode">
+            <summary>
+            Gets or sets the receiver country code.
+            </summary>
+            <value>The receiver country code.</value>
+        </member>
+        <member name="P:GoApi.Bank.BankTransfer.ReceiverVatNumber">
+            <summary>
+            Gets or sets the receiver vat number.
+            </summary>
+            <value>The receiver vat number.</value>
+        </member>
+        <member name="P:GoApi.Bank.BankTransfer.PayableBankAccount">
+            <summary>
+            Gets or sets the payable bank account. (Bank account transfered from)
+            </summary>
+        </member>
+        <member name="P:GoApi.Bank.BankTransfer.Status">
+            <summary>
+            Gets the status.
+            </summary>
+            <value>The status.</value>
+        </member>
+        <member name="P:GoApi.Bank.BankTransfer.CurrencyCode">
+            <summary>
+            Gets or sets the ISO 4217 currency code.
+            </summary>
+            <value>The currency code.</value>
+        </member>
+        <member name="P:GoApi.Bank.BankTransfer.PaymentDate">
+            <summary>
+            Gets or sets the payment date.
+            </summary>
+            <value>The payment date.</value>
+        </member>
+        <member name="P:GoApi.Bank.BankTransfer.Amount">
+            <summary>
+            Gets or sets the amount.
+            </summary>
+            <value>The amount.</value>
+        </member>
+        <member name="P:GoApi.Bank.BankTransfer.BalancingAccountNo">
+            <summary>
+            Gets or sets the balancing account no. This is the account that will be debited when the remittance is posted.
+            </summary>
+            <value>The balancing account no.</value>
+        </member>
+        <member name="P:GoApi.Bank.BankTransfer.ReceivableBankAccountCode">
+            <summary>
+            Gets or sets the receivable bank account (bank account transfered to). If the transfer is international it's recommended to use IBAN number instead of bank account number.
+            </summary>
+            <value>The receivable bank account.</value>
+        </member>
+        <member name="P:GoApi.Bank.BankTransfer.ReceivableBankAccountBicSwift">
+            <summary>
+            Gets or sets the receivable bank account bic swift.
+            </summary>
+            <value>The receivable bank account bic swift.</value>
+        </member>
+        <member name="P:GoApi.Bank.BankTransfer.ReceivableBankAccountCountryCode">
+            <summary>
+            Gets or sets the receivable bank account ISO 3166-1 alfa-2 country code.
+            </summary>
+            <value>The receivable bank account country code.</value>
+        </member>
+        <member name="P:GoApi.Bank.BankTransfer.ReceivableBankAccountBankCode">
+            <summary>
+            Gets or sets the receivable bank account bank code.
+            </summary>
+            <value>The receivable bank account bank code.</value>
+        </member>
+        <member name="P:GoApi.Bank.BankTransfer.Cid">
+            <summary>
+            Gets or sets the cid (Norwegian: KID).
+            </summary>
+            <value>The cid.</value>
+        </member>
+        <member name="P:GoApi.Bank.BankTransfer.PaymentMessage">
+            <summary>
+            Gets or sets the payment message to receiver. This message is used when a CID is not provied.
+            </summary>
+            <value>The payment message.</value>
+        </member>
+        <member name="P:GoApi.Bank.BankTransfer.CurrencyRegistryCode">
+            <summary>
+            Gets or sets the currency registry code.
+            </summary>
+            <value>The currency registry code.</value>
+        </member>
+        <member name="P:GoApi.Bank.BankTransfer.CurrencyRegistryText">
+            <summary>
+            Gets or sets the currency registry text.
+            </summary>
+            <value>The currency registry text.</value>
+        </member>
+        <member name="P:GoApi.Bank.BankTransfer.IsExpress">
+            <summary>
+            Gets or sets a value indicating whether this instance is express. This feature can be used on international payments to speed up processing, but banks may take extra charges.
+            </summary>
+            <value><c>null</c> if [is express] contains no value, <c>true</c> if [is express]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:GoApi.Bank.BankTransfer.InternationalPaymentFeeDistribution">
+            <summary>
+            Gets or sets the international payment fee distribution.
+            </summary>
+            <value>The international payment fee distribution.</value>
+        </member>
+        <member name="P:GoApi.Bank.BankTransfer.IsOnHold">
+            <summary>
+            Gets or sets a value indicating whether this instance is on hold.
+            </summary>
+            <value><c>null</c> if [is on hold] contains no value, <c>true</c> if [is on hold]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:GoApi.Bank.BankTransfer.ProjectCode">
+            <summary>
+            Gets or sets the project code. This is the code of the project that will be posted on when remitted.
+            </summary>
+            <value>The project code.</value>
+        </member>
+        <member name="P:GoApi.Bank.BankTransfer.DepartmentCode">
+            <summary>
+            Gets or sets the department code. This is the code of the department that will be posted on when remitted.
+            </summary>
+            <value>The department code.</value>
+        </member>
+        <member name="T:GoApi.Bank.ClientBankAccountService">
+            <summary>
+            ClientBankAccountService providing methods for querying and manipulating the <see cref="T:GoApi.Bank.ClientBankAccount"/>.
+            </summary>
+        </member>
+        <member name="M:GoApi.Bank.ClientBankAccountService.#ctor(GoApi.Core.IAuthorization)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GoApi.Bank.ClientBankAccountService"/> class.
+            </summary>
+            <param name="authorization">The authorization.</param>
+        </member>
+        <member name="T:GoApi.Bank.CurrencyRegistryCodes">
+            <summary>
+            Currency registry code describing the intention of the payment.
+            </summary>
+        </member>
+        <member name="F:GoApi.Bank.CurrencyRegistryCodes.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:GoApi.Bank.CurrencyRegistryCodes.PurchaseOfGoods">
+            <summary>
+            Purchase of goods
+            </summary>
+        </member>
+        <member name="F:GoApi.Bank.CurrencyRegistryCodes.LeaseOfServices">
+            <summary>
+            Lease of services
+            </summary>
+        </member>
+        <member name="F:GoApi.Bank.CurrencyRegistryCodes.OtherPurchaseOrSaleOfServices">
+            <summary>
+            Other purchase or sale of services
+            </summary>
+        </member>
+        <member name="F:GoApi.Bank.CurrencyRegistryCodes.Interests">
+            <summary>
+            Interests
+            </summary>
+        </member>
+        <member name="F:GoApi.Bank.CurrencyRegistryCodes.Dividends">
+            <summary>
+            Dividends
+            </summary>
+        </member>
+        <member name="F:GoApi.Bank.CurrencyRegistryCodes.OtherReturnOnCapital">
+            <summary>
+            Other return on capital
+            </summary>
+        </member>
+        <member name="F:GoApi.Bank.CurrencyRegistryCodes.PurchaseOrSaleOfProperty">
+            <summary>
+            Purchase or sale of property
+            </summary>
+        </member>
+        <member name="F:GoApi.Bank.CurrencyRegistryCodes.InvestmentInSharesAndMore">
+            <summary>
+            Investment in shares and more
+            </summary>
+        </member>
+        <member name="F:GoApi.Bank.CurrencyRegistryCodes.InvestmentInOtherCapital">
+            <summary>
+            Investment in other capital
+            </summary>
+        </member>
+        <member name="F:GoApi.Bank.CurrencyRegistryCodes.PortfolioInvestmentInSharesAndMutualFundsShares">
+            <summary>
+            Portfolio investment in shares and mutual funds shares
+            </summary>
+        </member>
+        <member name="F:GoApi.Bank.CurrencyRegistryCodes.PortfolioInvestmentInBondsAndNotes">
+            <summary>
+            Portfolio investment in bonds and notes
+            </summary>
+        </member>
+        <member name="F:GoApi.Bank.CurrencyRegistryCodes.PortfolioInvestmentInDerivatives">
+            <summary>
+            Portfolio investment in derivatives
+            </summary>
+        </member>
+        <member name="F:GoApi.Bank.CurrencyRegistryCodes.LifeInsurancePension">
+            <summary>
+            Life insurance pension
+            </summary>
+        </member>
+        <member name="F:GoApi.Bank.CurrencyRegistryCodes.OtherFinancialInvestments">
+            <summary>
+            Other financial investments
+            </summary>
+        </member>
+        <member name="F:GoApi.Bank.CurrencyRegistryCodes.Salaries">
+            <summary>
+            Salaries
+            </summary>
+        </member>
+        <member name="F:GoApi.Bank.CurrencyRegistryCodes.InheritanceGiftsAndMore">
+            <summary>
+            Inheritance gifts and more
+            </summary>
+        </member>
+        <member name="T:GoApi.Bank.InternationalPaymentFeeDistribution">
+            <summary>
+            Enum that describes different ways of distributing the fees when making an international bank wire transfer
+            </summary>
+        </member>
+        <member name="F:GoApi.Bank.InternationalPaymentFeeDistribution.Shared">
+            <summary>
+            The fees are shared between the sender and the receiver.
+            </summary>
+        </member>
+        <member name="F:GoApi.Bank.InternationalPaymentFeeDistribution.Sender">
+            <summary>
+            The sender pays all fees.
+            </summary>
+        </member>
+        <member name="F:GoApi.Bank.InternationalPaymentFeeDistribution.Receiver">
+            <summary>
+            The receiver pays all fees.
+            </summary>
+        </member>
         <member name="T:GoApi.Client.Client">
             <summary>
             Class Client representing an organization using PowerOffice Go.
@@ -71,7 +631,7 @@
         </member>
         <member name="T:GoApi.Client.ClientService">
             <summary>
-                Class ClientService used to query and edit the client related to the connection.
+                Class ClientService used to query and edit the <see cref="T:GoApi.Client.Client"/> related to the connection.
             </summary>
         </member>
         <member name="M:GoApi.Client.ClientService.#ctor(GoApi.Core.IAuthorization,System.Uri)">
@@ -96,7 +656,7 @@
         </member>
         <member name="T:GoApi.Common.BlobService">
             <summary>
-                Service for downloading binary objects from blob storage.
+                Service for downloading binary objects from blob storage as stream.
             </summary>
         </member>
         <member name="M:GoApi.Common.BlobService.#ctor(GoApi.Core.IAuthorization)">
@@ -112,6 +672,13 @@
             <param name="voucherNo">The voucher no of the voucher.</param>
             <param name="pageNo">The page number of the voucher pdf.</param>
             <returns>A Stream containing the image data.</returns>
+        </member>
+        <member name="M:GoApi.Common.BlobService.GetVoucherEhf(System.Int64)">
+            <summary>
+                Get the ehf xml document for a supplier invoice as a Stream.
+            </summary>
+            <param name="voucherNo">The voucher no of the voucher.</param>
+            <returns>A Stream containing the xml data.</returns>
         </member>
         <member name="T:GoApi.Common.InvoiceDeliveryType">
             <summary>
@@ -136,6 +703,11 @@
         <member name="F:GoApi.Common.InvoiceDeliveryType.EHF">
             <summary>
             Invoice will be delivered over EHF
+            </summary>
+        </member>
+        <member name="F:GoApi.Common.InvoiceDeliveryType.AvtaleGiro">
+            <summary>
+            The will be delivered over AvtaleGiro
             </summary>
         </member>
         <member name="T:GoApi.Common.VoucherLineType">
@@ -1073,6 +1645,9 @@
         <member name="F:GoApi.Core.OData.ODataExpressionType.DateTimeOffset">
             <summary>Edm.DateTimeOffset</summary>
         </member>
+        <member name="F:GoApi.Core.OData.ODataExpressionType.Enum">
+            <summary>Edm.Enum</summary>
+        </member>
         <member name="F:GoApi.Core.OData.ODataExpressionType.Null">
             <summary>
             Not really a type, but used to model "null" constants
@@ -1955,9 +2530,15 @@
             </summary>
             <value>The last changed date.</value>
         </member>
+        <member name="P:GoApi.Dimension.Department.CreatedFromImportJournalId">
+            <summary>
+            Gets the created from import journal identifier.
+            </summary>
+            <value>The created from import journal identifier.</value>
+        </member>
         <member name="T:GoApi.Dimension.DepartmentService">
             <summary>
-                Class DepartmentService providing methods to query and manipulate departments on the client.
+                Class DepartmentService providing methods to query and manipulate <see cref="T:GoApi.Dimension.Department"/> on the client.
             </summary>
             <seealso cref="T:GoApi.Dimension.DimensionService`1" />
         </member>
@@ -2024,7 +2605,7 @@
         </member>
         <member name="T:GoApi.Dimension.VatCodeService">
             <summary>
-                Class VatCodeService providing methods to query VatCodes on the client.
+                Class VatCodeService providing methods to query <see cref="T:GoApi.Dimension.VatCode"/> on the client.
             </summary>
         </member>
         <member name="M:GoApi.Dimension.VatCodeService.#ctor(GoApi.Core.IAuthorization,System.Uri)">
@@ -2133,6 +2714,18 @@
             </summary>
             <value>The project API end point.</value>
         </member>
+        <member name="P:GoApi.Global.Settings.ProjectTeamMemberApiEndPoint">
+            <summary>
+                Gets the project team member API end point.
+            </summary>
+            <value>The project team member API end point.</value>
+        </member>
+        <member name="P:GoApi.Global.Settings.ProjectActivityApiEndPoint">
+            <summary>
+                Gets the project activity API end point.
+            </summary>
+            <value>The project activity API end point.</value>
+        </member>
         <member name="P:GoApi.Global.Settings.DepartmentApiEndPoint">
             <summary>
                 Gets the department API end point.
@@ -2156,6 +2749,12 @@
                 Gets the outgoing invoice API end point.
             </summary>
             <value>The outgoing invoice API end point.</value>
+        </member>
+        <member name="P:GoApi.Global.Settings.RecurringInvoiceApiEndPoint">
+            <summary>
+                Gets the recurring invoice API end point.
+            </summary>
+            <value>The recurring invoice API end point.</value>
         </member>
         <member name="P:GoApi.Global.Settings.TrialBalanceReportApiEndPoint">
             <summary>
@@ -2234,6 +2833,48 @@
                 Gets the hour type API end point.
             </summary>
             <value>The hour type API end point.</value>
+        </member>
+        <member name="P:GoApi.Global.Settings.TimeTrackingEntryApiEndPoint">
+            <summary>
+                Gets the time tracking entry API end point.
+            </summary>
+            <value>The time tracking entry API end point.</value>
+        </member>
+        <member name="P:GoApi.Global.Settings.ActivityApiEndPoint">
+            <summary>
+                Gets the activity API end point.
+            </summary>
+            <value>The activity API end point.</value>
+        </member>
+        <member name="P:GoApi.Global.Settings.ClientBankAccountApiEndPoint">
+            <summary>
+                Gets the client bank account API end point.
+            </summary>
+            <value>The client bank account API end point.</value>
+        </member>
+        <member name="P:GoApi.Global.Settings.BankTransferApiEndPoint">
+            <summary>
+                Gets the bank transfer API end point.
+            </summary>
+            <value>The bank transfer API end point.</value>
+        </member>
+        <member name="P:GoApi.Global.Settings.GeneralLedgerAccountApiEndPoint">
+            <summary>
+                Gets the general ledger account API end point.
+            </summary>
+            <value>The general ledger account API end point.</value>
+        </member>
+        <member name="P:GoApi.Global.Settings.SubledgerNumberSeriesApiEndPoint">
+            <summary>
+                Gets the subledger number series API end point.
+            </summary>
+            <value>The subledger number series API end point.</value>
+        </member>
+        <member name="P:GoApi.Global.Settings.LocationApiEndPoint">
+            <summary>
+                Gets the location API end point.
+            </summary>
+            <value>The location API end point.</value>
         </member>
         <member name="T:GoApi.Global.Settings.EndPointMode">
             <summary>
@@ -2360,6 +3001,41 @@
              Outgoing invoice service
             </summary>
         </member>
+        <member name="P:GoApi.Go.ClientBankAccount">
+            <summary>
+            Client bank account service
+            </summary>
+        </member>
+        <member name="P:GoApi.Go.BankTransfer">
+            <summary>
+            Bank transfer service
+            </summary>
+        </member>
+        <member name="P:GoApi.Go.GeneralLedgerAccount">
+            <summary>
+            General ledger account service
+            </summary>
+        </member>
+        <member name="P:GoApi.Go.SubledgerNumberSeries">
+            <summary>
+            Subledger number series service
+            </summary>
+        </member>
+        <member name="P:GoApi.Go.TimeTracking">
+            <summary>
+            Time tracking serices
+            </summary>
+        </member>
+        <member name="P:GoApi.Go.Location">
+            <summary>
+            Location service
+            </summary>
+        </member>
+        <member name="P:GoApi.Go.RecurringInvoice">
+            <summary>
+            Recurring invoice service
+            </summary>
+        </member>
         <member name="T:GoApi.Import.ImportFile">
             <summary>
                 Represents a import file.
@@ -2420,7 +3096,7 @@
         </member>
         <member name="T:GoApi.Import.ImportService">
             <summary>
-                Class ImportService providing methods for importing data on the client.
+                Class ImportService providing methods for importing data (<see cref="T:GoApi.Import.Import"/>) on the client.
             </summary>
         </member>
         <member name="M:GoApi.Import.ImportService.#ctor(GoApi.Core.IAuthorization)">
@@ -2665,6 +3341,25 @@
             </summary>
             <value>The product code.</value>
         </member>
+        <member name="P:GoApi.Import.ImportLine.DeliveryDate">
+            <summary>
+                Gets or sets the delivery date.
+            </summary>
+            <value>The delivery date.</value>
+        </member>
+        <member name="P:GoApi.Import.ImportLine.PurchaseOrderNo">
+            <summary>
+            Gets or sets the purchase order no.
+            </summary>
+            <value>The purchase order no.</value>
+        </member>
+        <member name="P:GoApi.Import.ImportLine.CustomMatchingReference">
+            <summary>
+            Gets or sets the custom matching reference. This value can be put on Subledger entries (lines with CustomerNo, SupplierNo og EmployeeNo).
+            Lines with this value set will be matched with other entries with same CustomMatchingReference after the import is complete.
+            </summary>
+            <value>The custom matching reference.</value>
+        </member>
         <member name="T:GoApi.Import.ImportStatus">
             <summary>
             Class representing status of a specific import.
@@ -2862,6 +3557,12 @@
             </summary>
             <value>The delivery address identifier.</value>
         </member>
+        <member name="P:GoApi.Invoices.OutgoingInvoice.PaymentTerms">
+            <summary>
+            Gets or sets the payment terms. This is the number of days until the invoice is due after sending.
+            </summary>
+            <value>The payment terms.</value>
+        </member>
         <member name="P:GoApi.Invoices.OutgoingInvoice.CustomerReference">
             <summary>
                 Gets or sets the customer reference.
@@ -2886,9 +3587,21 @@
             </summary>
             <value>The cid.</value>
         </member>
+        <member name="P:GoApi.Invoices.OutgoingInvoice.LastChanged">
+            <summary>
+            Gets the last changed date.
+            </summary>
+            <value>The last changed date.</value>
+        </member>
+        <member name="P:GoApi.Invoices.OutgoingInvoice.CreatedDate">
+            <summary>
+            Gets the date this entity was created.
+            </summary>
+            <value>The created date.</value>
+        </member>
         <member name="T:GoApi.Invoices.OutgoingInvoiceDetailsService">
             <summary>
-            Class OutgoingInvoiceDetailsService.
+            Class OutgoingInvoiceDetailsService for retrieving, manipulating and deleting <see cref="T:GoApi.Invoices.OutgoingInvoice"/>.
             </summary>
         </member>
         <member name="M:GoApi.Invoices.OutgoingInvoiceDetailsService.#ctor(GoApi.Core.IAuthorization)">
@@ -3018,7 +3731,7 @@
         </member>
         <member name="T:GoApi.Invoices.OutgoingInvoiceListItemService">
             <summary>
-            Service to query <see cref="T:GoApi.Invoices.OutgoingInvoiceListItem" />
+            Service to query <see cref="T:GoApi.Invoices.OutgoingInvoiceListItem" />.
             </summary>
         </member>
         <member name="M:GoApi.Invoices.OutgoingInvoiceListItemService.#ctor(GoApi.Core.IAuthorization)">
@@ -3077,13 +3790,13 @@
         </member>
         <member name="P:GoApi.Invoices.OutgoingInvoiceService.OutgoingInvoiceListItem">
             <summary>
-            Gets the outgoing invoice list item service.
+            Gets the outgoing invoice list item sub-service.
             </summary>
             <value>The outgoing invoice list item service.</value>
         </member>
         <member name="P:GoApi.Invoices.OutgoingInvoiceService.OutgoingInvoiceDetails">
             <summary>
-            Gets the outgoing invoice details service.
+            Gets the outgoing invoice details sub-service.
             </summary>
             <value>The outgoing invoice details service.</value>
         </member>
@@ -3112,9 +3825,242 @@
             Invoice has been paid fully by the customer.
             </summary>
         </member>
+        <member name="T:GoApi.Invoices.RecurringInvoice">
+            <summary>
+                Class RecurringInvoice representing an invoice that is repeated multiple times.
+            </summary>
+        </member>
+        <member name="P:GoApi.Invoices.RecurringInvoice.IsActive">
+            <summary>
+            Gets or sets a value indicating whether this instance is active.
+            </summary>
+            <value><c>null</c> if [is active] contains no value, <c>true</c> if [is active]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:GoApi.Invoices.RecurringInvoice.RepeatTimes">
+            <summary>
+                Determines how many times this recurring setup should repeat before being canceled and <see cref="P:GoApi.Invoices.RecurringInvoice.IsActive" /> set
+                to <c>false</c>. <c>null</c> means infinite.
+            </summary>
+        </member>
+        <member name="P:GoApi.Invoices.RecurringInvoice.EndDate">
+            <summary>
+                Determines if and when the recurring setup should be canceled and <see cref="P:GoApi.Invoices.RecurringInvoice.IsActive" /> set to <c>false</c>.
+            </summary>
+        </member>
+        <member name="P:GoApi.Invoices.RecurringInvoice.SendMethod">
+            <summary>
+                Determines how to send the associated invoice.
+            </summary>
+        </member>
+        <member name="P:GoApi.Invoices.RecurringInvoice.SendFrequency">
+            <summary>
+                How often the associated invoice should be sent. See also <see cref="P:GoApi.Invoices.RecurringInvoice.SendFrequency" /> for the unit of measure to
+                be used.
+            </summary>
+        </member>
+        <member name="P:GoApi.Invoices.RecurringInvoice.SendFrequencyUnit">
+            <summary>
+                What unit the <see cref="P:GoApi.Invoices.RecurringInvoice.SendFrequency" /> describes.
+            </summary>
+        </member>
+        <member name="P:GoApi.Invoices.RecurringInvoice.NextInvoiceDate">
+            <summary>
+                The invoice date for the next invoice.
+            </summary>
+        </member>
+        <member name="P:GoApi.Invoices.RecurringInvoice.DaysInAdvance">
+            <summary>
+                Indicates the number of days in advance this voucher should be created.
+            </summary>
+            <value>The days in advance.</value>
+        </member>
+        <member name="T:GoApi.Invoices.RecurringInvoiceDetailsService">
+            <summary>
+                Class RecurringInvoiceDetailsService for retrieving, manipulating and deleting <see cref="T:GoApi.Invoices.RecurringInvoice" />.
+            </summary>
+        </member>
+        <member name="M:GoApi.Invoices.RecurringInvoiceDetailsService.#ctor(GoApi.Core.IAuthorization)">
+            <summary>
+                Initializes a new instance of the <see cref="T:GoApi.Core.DataObjectCrudService`1" /> class.
+            </summary>
+            <param name="authorization">The connection.</param>
+        </member>
+        <member name="M:GoApi.Invoices.RecurringInvoiceDetailsService.Save(GoApi.Invoices.RecurringInvoice)">
+            <summary>
+                Saves the specified recurring invoice..
+            </summary>
+            <param name="entity">The data object.</param>
+            <returns>RecurringInvoice.</returns>
+        </member>
+        <member name="M:GoApi.Invoices.RecurringInvoiceDetailsService.Get(System.Guid)">
+            <summary>
+                Get a recurring invoice by its Id.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns>RecurringInvoice.</returns>
+        </member>
+        <member name="M:GoApi.Invoices.RecurringInvoiceDetailsService.Delete(GoApi.Invoices.RecurringInvoice)">
+            <summary>
+                Delete an recurring invoice
+            </summary>
+            <param name="entity">The entity.</param>
+            <returns>RecurringInvoice.</returns>
+            <exception cref="T:System.Exception">
+                RecurringInvoice.Id has no value.
+            </exception>
+        </member>
+        <member name="T:GoApi.Invoices.RecurringInvoiceListItem">
+            <summary>
+            Class RecurringInvoiceListItem representing an invoice that is repeated multiple times without details.
+            </summary>
+        </member>
+        <member name="P:GoApi.Invoices.RecurringInvoiceListItem.IsActive">
+            <summary>
+            Gets or sets a value indicating whether this instance is active.
+            </summary>
+            <value><c>null</c> if [is active] contains no value, <c>true</c> if [is active]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:GoApi.Invoices.RecurringInvoiceListItem.RepeatTimes">
+            <summary>
+                Determines how many times this recurring setup should repeat before being canceled and <see cref="P:GoApi.Invoices.RecurringInvoiceListItem.IsActive" /> set
+                to <c>false</c>. <c>null</c> means infinite.
+            </summary>
+        </member>
+        <member name="P:GoApi.Invoices.RecurringInvoiceListItem.EndDate">
+            <summary>
+                Determines if and when the recurring setup should be canceled and <see cref="P:GoApi.Invoices.RecurringInvoiceListItem.IsActive" /> set to <c>false</c>.
+            </summary>
+        </member>
+        <member name="P:GoApi.Invoices.RecurringInvoiceListItem.SendMethod">
+            <summary>
+                Determines how to send the associated invoice.
+            </summary>
+        </member>
+        <member name="P:GoApi.Invoices.RecurringInvoiceListItem.SendFrequency">
+            <summary>
+                How often the associated invoice should be sent. See also <see cref="P:GoApi.Invoices.RecurringInvoiceListItem.SendFrequency" /> for the unit of measure to
+                be used.
+            </summary>
+        </member>
+        <member name="P:GoApi.Invoices.RecurringInvoiceListItem.SendFrequencyUnit">
+            <summary>
+                What unit the <see cref="P:GoApi.Invoices.RecurringInvoiceListItem.SendFrequency" /> describes.
+            </summary>
+        </member>
+        <member name="P:GoApi.Invoices.RecurringInvoiceListItem.NextInvoiceDate">
+            <summary>
+                The invoice date for the next invoice.
+            </summary>
+        </member>
+        <member name="P:GoApi.Invoices.RecurringInvoiceListItem.DaysInAdvance">
+            <summary>
+                Indicates the number of days in advance this voucher should be created.
+            </summary>
+            <value>The days in advance.</value>
+        </member>
+        <member name="M:GoApi.Invoices.RecurringInvoiceListItemService.List(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Gets OutgoingInvoiceListItem by a LINQ expression
+            </summary>
+            <param name="parameters">Additional parameters to pass to the server controller</param>
+            <returns>IQueryable&lt;OutgoingInvoiceListItem&gt;.</returns>
+        </member>
+        <member name="T:GoApi.Invoices.RecurringSendFrequencyUnit">
+            <summary>
+            Specifies how often a recurring invoice should be sent.
+            </summary>
+        </member>
+        <member name="F:GoApi.Invoices.RecurringSendFrequencyUnit.Weekly">
+            <summary>
+            Weekly
+            </summary>
+        </member>
+        <member name="F:GoApi.Invoices.RecurringSendFrequencyUnit.Monthly">
+            <summary>
+            Monthly
+            </summary>
+        </member>
+        <member name="F:GoApi.Invoices.RecurringSendFrequencyUnit.Yearly">
+            <summary>
+            Yearly
+            </summary>
+        </member>
+        <member name="F:GoApi.Invoices.RecurringSendFrequencyUnit.Daily">
+            <summary>
+            Daily
+            </summary>
+        </member>
+        <member name="T:GoApi.Invoices.RecurringSendMethod">
+            <summary>
+            Describes what happens to a recurring invoice when the invoice date is reached.
+            </summary>
+        </member>
+        <member name="F:GoApi.Invoices.RecurringSendMethod.Confirm">
+            <summary>
+            The invoice will be saved as a confirmed invoice when the invoice date is reached.
+            </summary>
+        </member>
+        <member name="F:GoApi.Invoices.RecurringSendMethod.Send">
+            <summary>
+            Invoice will be sent to the customer when the invoice date is reached.
+            </summary>
+        </member>
+        <member name="T:GoApi.Invoices.RecurringInvoiceService">
+            <summary>
+                Class RecurringInvoiceService.
+            </summary>
+        </member>
+        <member name="M:GoApi.Invoices.RecurringInvoiceService.#ctor(GoApi.Core.IAuthorization)">
+            <summary>
+                Initializes a new instance of the <see cref="T:GoApi.Invoices.RecurringInvoiceService" /> class.
+            </summary>
+            <param name="authorization">The authorization.</param>
+        </member>
+        <member name="P:GoApi.Invoices.RecurringInvoiceService.RecurringInvoiceListItem">
+            <summary>
+                Gets the recurring invoice list item sub-service.
+            </summary>
+            <value>The recurring invoice list item service.</value>
+        </member>
+        <member name="P:GoApi.Invoices.RecurringInvoiceService.RecurringInvoiceDetails">
+            <summary>
+                Gets the recurring invoice details sub-service.
+            </summary>
+            <value>The recurring invoice details service.</value>
+        </member>
+        <member name="M:GoApi.Invoices.RecurringInvoiceService.List">
+            <summary>
+                Query for listing all Recurring Invoices on a client.
+            </summary>
+            <returns>IQueryable&lt;RecurringInvoiceListItem&gt;.</returns>
+        </member>
+        <member name="M:GoApi.Invoices.RecurringInvoiceService.Save(GoApi.Invoices.RecurringInvoice)">
+            <summary>
+                Saves the specified RecurringInvoice.
+            </summary>
+            <param name="entity">The data object.</param>
+            <returns>RecurringInvoice.</returns>
+        </member>
+        <member name="M:GoApi.Invoices.RecurringInvoiceService.Get(System.Guid)">
+            <summary>
+                Get a RecurringInvoice by its Id.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns>RecurringInvoice.</returns>
+        </member>
+        <member name="M:GoApi.Invoices.RecurringInvoiceService.Delete(GoApi.Invoices.RecurringInvoice)">
+            <summary>
+                Delete an Recurring invoice
+            </summary>
+            <param name="entity">The entity.</param>
+            <returns>RecurringInvoice.</returns>
+            <exception cref="T:System.Exception">
+                RecurringInvoice.Id has no value.
+            </exception>
+        </member>
         <member name="T:GoApi.Invoices.OutgoingInvoiceListItem">
             <summary>
-                Outgoing invoice list item
+                OutgoingInvoiceListItem representing an Outgoing Invoice without details
             </summary>
         </member>
         <member name="P:GoApi.Invoices.OutgoingInvoiceListItem.Id">
@@ -3219,6 +4165,125 @@
             </summary>
             <value>The cid.</value>
         </member>
+        <member name="P:GoApi.Invoices.OutgoingInvoiceListItem.PaymentTerms">
+            <summary>
+            Gets or sets the payment terms. This is the number of days until the invoice is due after sending.
+            </summary>
+            <value>The payment terms.</value>
+        </member>
+        <member name="P:GoApi.Invoices.OutgoingInvoiceListItem.LastChanged">
+            <summary>
+            Gets the last changed date.
+            </summary>
+            <value>The last changed date.</value>
+        </member>
+        <member name="P:GoApi.Invoices.OutgoingInvoiceListItem.CreatedDate">
+            <summary>
+            Gets the date this entity was created.
+            </summary>
+            <value>The created date.</value>
+        </member>
+        <member name="T:GoApi.Party.PartyBankAccount">
+            <summary>
+            PartyBankAccount representing a bank account on a Contact (Customer, Supplier or Employee).
+            </summary>
+        </member>
+        <member name="P:GoApi.Party.PartyBankAccount.Id">
+            <summary>
+            Gets the identifier.
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:GoApi.Party.PartyBankAccount.Code">
+            <summary>
+            Gets or sets the code. This is either a domestic bank account code or a IBAN number.
+            </summary>
+            <value>The code.</value>
+        </member>
+        <member name="P:GoApi.Party.PartyBankAccount.BicSwift">
+            <summary>
+            Gets or sets the bic swift.
+            </summary>
+            <value>The bic swift.</value>
+        </member>
+        <member name="P:GoApi.Party.PartyBankAccount.CountryCode">
+            <summary>
+            Gets or sets the country code.
+            </summary>
+            <value>The country code.</value>
+        </member>
+        <member name="P:GoApi.Party.PartyBankAccount.BankCode">
+            <summary>
+            Gets or sets the bank code.
+            </summary>
+            <value>The bank code.</value>
+        </member>
+        <member name="P:GoApi.Party.PartyBankAccount.IsActive">
+            <summary>
+            Gets or sets a value indicating whether this instance is active.
+            </summary>
+            <value><c>null</c> if [is active] contains no value, <c>true</c> if [is active]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:GoApi.Party.PartyBankAccount.LastChanged">
+            <summary>
+                Gets the last changed date.
+            </summary>
+            <value>The last changed date.</value>
+        </member>
+        <member name="T:GoApi.Party.PartyBankAccountService`1">
+            <summary>
+            PartyBankAccountService provides methods for querying, manipulating and deleting <see cref="T:GoApi.Party.PartyBankAccount"/>.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:GoApi.Party.PartyBankAccountService`1.#ctor(GoApi.Core.IAuthorization,System.Uri)">
+            <summary>
+                Initializes a new instance of the <see cref="T:GoApi.Core.DataObjectCrudService`1" /> class.
+            </summary>
+            <param name="authorization">The connection.</param>
+            <param name="baseUri">The base URI.</param>
+        </member>
+        <member name="M:GoApi.Party.PartyBankAccountService`1.Save(`0,GoApi.Party.PartyBankAccount)">
+            <summary>
+                Saves the contact bank account.
+            </summary>
+            <param name="parent">The party.</param>
+            <param name="entity">The contact bank account.</param>
+            <returns>PartyBankAccount.</returns>
+        </member>
+        <member name="M:GoApi.Party.PartyBankAccountService`1.Get(`0)">
+            <summary>
+                Get contact bank accounts for a given party by a LINQ expression
+            </summary>
+            <returns>IQueryable&lt;PartyBankAccount&gt;.</returns>
+        </member>
+        <member name="M:GoApi.Party.PartyBankAccountService`1.Get(`0,System.Int64)">
+            <summary>
+            Gets the contact bank account for a party by its Id.
+            </summary>
+            <param name="parent">The party.</param>
+            <param name="id">The identifier.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:GoApi.Party.PartyBankAccountService`1.Delete(`0,GoApi.Party.PartyBankAccount)">
+            <summary>
+            Delete a contact bank account for a party.
+            </summary>
+            <param name="parent">The party.</param>
+            <param name="entity">The contact bank account.</param>
+            <returns>T.</returns>
+            <exception cref="T:System.Exception">Entity must be of type DataObject
+            or
+            Key property of entity has illegal type</exception>
+        </member>
+        <member name="M:GoApi.Party.PartyBankAccountService`1.GetUrlFor(`0,System.Nullable{System.Int64})">
+            <summary>
+            Generate the URL for the specified party bank account controller method
+            </summary>
+            <param name="parent">The party.</param>
+            <param name="itemId">The item identifier.</param>
+            <returns>System.String.</returns>
+        </member>
         <member name="T:GoApi.Party.ContactGroup">
             <summary>
                 Class ContactGroup representing a group for parties.
@@ -3318,6 +4383,24 @@
             </summary>
             <value>The name.</value>
         </member>
+        <member name="P:GoApi.Party.Customer.FirstName">
+            <summary>
+                Gets or sets the first name.
+            </summary>
+            <value>The first name.</value>
+        </member>
+        <member name="P:GoApi.Party.Customer.LastName">
+            <summary>
+                Gets or sets the last name.
+            </summary>
+            <value>The last name.</value>
+        </member>
+        <member name="P:GoApi.Party.Customer.IsPerson">
+            <summary>
+            Gets or sets a value indicating whether this instance is a private person.
+            </summary>
+            <value><c>true</c> if this instance is person; otherwise, <c>false</c>.</value>
+        </member>
         <member name="P:GoApi.Party.Customer.LegalName">
             <summary>
             Gets or sets the legal name.
@@ -3371,6 +4454,18 @@
             </summary>
             <value>The discount percent.</value>
         </member>
+        <member name="P:GoApi.Party.Customer.InvoiceEmailAddress">
+            <summary>
+            Gets or sets the invoice email address.
+            </summary>
+            <value>The invoice email address.</value>
+        </member>
+        <member name="P:GoApi.Party.Customer.HourlyRate">
+            <summary>
+                Gets or sets the hourly rate to use when billing time to the Customer.
+            </summary>
+            <value>The hour price.</value>
+        </member>
         <member name="T:GoApi.Party.ContactPerson">
             <summary>
                 Class ContactPerson representing a contact person for a party.
@@ -3412,6 +4507,12 @@
             </summary>
             <value>The last changed date.</value>
         </member>
+        <member name="P:GoApi.Party.ContactPerson.IsActive">
+            <summary>
+            Gets or sets a value indicating whether this instance is active.
+            </summary>
+            <value><c>null</c> if [is active] contains no value, <c>true</c> if [is active]; otherwise, <c>false</c>.</value>
+        </member>
         <member name="T:GoApi.Party.CustomerAndSupplierService`1">
             <summary>
             CustomerAndSupplierService provides methods to query and manipulate Customers and Suppliers
@@ -3434,7 +4535,7 @@
         </member>
         <member name="T:GoApi.Party.CustomerService">
             <summary>
-                Class CustomerService provides methods to query and manipulate Customers.
+                Class CustomerService provides methods to query and manipulate <see cref="T:GoApi.Party.Customer"/>.
             </summary>
             <seealso cref="T:GoApi.Party.CustomerAndSupplierService`1" />
             <example>GoAPI:Example:CustomerDemo:The purpose of this demo is to test some of the Customer functionallity available to PowerOffice Go users</example>
@@ -3448,7 +4549,7 @@
         </member>
         <member name="T:GoApi.Party.EmployeeService">
             <summary>
-                Class EmployeeService provides methods to query and manipulate Employees.
+                Class EmployeeService provides methods to query and manipulate <see cref="T:GoApi.Party.Employee"/>.
             </summary>
             <seealso cref="T:GoApi.Party.PartyService`1" />
         </member>
@@ -3471,6 +4572,12 @@
             </summary>
             <param name="authorization">The authorization.</param>
             <param name="baseUri">The base URI.</param>
+        </member>
+        <member name="P:GoApi.Party.PartyService`1.PartyBankAccount">
+            <summary>
+                Party bank account service.
+            </summary>
+            <value>The party bank account.</value>
         </member>
         <member name="T:GoApi.Party.Employee">
             <summary>
@@ -3537,6 +4644,18 @@
             </summary>
             <value>The social security number.</value>
         </member>
+        <member name="P:GoApi.Party.Employee.LocationCode">
+            <summary>
+            Gets or sets the location code.
+            </summary>
+            <value>The location code.</value>
+        </member>
+        <member name="P:GoApi.Party.Employee.HourlyRate">
+            <summary>
+                Gets or sets the hourly rate on this employee to use when billing time.
+            </summary>
+            <value>The hour price.</value>
+        </member>
         <member name="T:GoApi.Party.Party">
             <summary>
                 Base class for Customer, Supplier and Employee
@@ -3597,10 +4716,16 @@
         </member>
         <member name="P:GoApi.Party.Party.ContactGroups">
             <summary>
-            Gets or sets the contact groups. This collection will contain the names of all the contact groups the client is associated with.
+            Gets or sets the contact groups. This collection will contain the names of all the contact groups the party is associated with.
             If the collection is provided a contact group that does not exist, it will be created when saving.
             </summary>
             <value>The contact groups.</value>
+        </member>
+        <member name="P:GoApi.Party.Party.CreatedFromImportJournalId">
+            <summary>
+            Gets the created from import journal identifier.
+            </summary>
+            <value>The created from import journal identifier.</value>
         </member>
         <member name="T:GoApi.Party.Supplier">
             <summary>
@@ -3609,7 +4734,7 @@
         </member>
         <member name="T:GoApi.Party.SupplierService">
             <summary>
-                Class SupplierService provides methods to query and manipulate Suppliers.
+                Class SupplierService provides methods to query and manipulate <see cref="T:GoApi.Party.Supplier"/>.
             </summary>
             <seealso cref="T:GoApi.Party.CustomerAndSupplierService`1" />
         </member>
@@ -3655,9 +4780,158 @@
             </summary>
             <value>The description.</value>
         </member>
+        <member name="P:GoApi.Payroll.PayItem.ProcessingType">
+            <summary>
+            Gets the processing type of the pay item.
+            </summary>
+            <value>The processing type of the pay item.</value>
+        </member>
+        <member name="T:GoApi.Payroll.PayItemProcessingType">
+            <summary>
+            Enum PayItemProcessingType specifying the rules used when processing a salary line.
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.FixedAmount">
+            <summary>
+            Fixed amount
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.FixedAmountWithQuantity">
+            <summary>
+            Fixed amount with quantity
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.FixedAmountWithQuantitySubjectToWithholdingTax">
+            <summary>
+            Fixed amount with quantity subject to withholding tax. Link to another pay item.
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.QuantityAndRate">
+            <summary>
+            Rate based with quantity and rate.
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.QuantityAndRateSubjectToWithholdingTax">
+            <summary>
+            Pay items with this processing type is the same as "quantity and rate" but have a link to another pay item where extra tax should be withheld.
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.QuantityAndFixedRate">
+            <summary>
+            Rate based with a fixed rate specified on pay item level.
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.FixedSalary">
+            <summary>
+            Fixed salary
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.HourlyWage">
+            <summary>
+            Hourly wage
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.PercentOfHourlyWage">
+            <summary>
+            Percent of hourly wage (overtime)
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.HolidayPay">
+            <summary>
+            Holiday pay. No tax should be calculated from this amount.
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.HolidayPayOver60Years">
+            <summary>
+            The holiday pay for employees that are 60 years or older. Taxes should be calculated from this amount.
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.WageDeductionForHoliday">
+            <summary>
+            Deduction in fixed pay for taking a holiday.
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.ElectronicCommunications">
+            <summary>
+            The electronic communications
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.ExpenseRefund">
+            <summary>
+            The expense refund
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.SalaryAdvance">
+            <summary>
+            Used when giving an employee a salary advance.
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.FreeCarStandardRule">
+            <summary>
+            The free car standard rule
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.FreeCarOther">
+            <summary>
+            Used when the car is very expensive and the benefit becomes unreasonably high.
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.FreeCarOutsideStandardRule">
+            <summary>
+            Used on larger vehicles (more than 7500kg) or buses with more than 15 passenger seats.
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.WorkCarListPrice">
+            <summary>
+            Used for small commercial trucks less than 7501kg based on the list price.
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.WorkCarKilometers">
+            <summary>
+            Used for small commercial trucks less than 7501kg based on the number of km driven privately by the employee.
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.DeductionWithBalance">
+            <summary>
+            Deduction that has a start balance that should be reduced each payroll.
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.BackPaymentOfPensionAndAnnuities">
+            <summary>
+            Etterbetaling av pensjon og livrente. Krever fra/tildato.
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.HolidayPayFinalSettlement">
+            <summary>
+            The holiday pay final settlement. Used when an employee quits their job and want all of this years holiday pay paid.
+            Taxes should be calculated from this amount.
+            This must be calculated after all pay items that have IncludeInHolidayPay set to true.
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.TradeUnionDeduction">
+            <summary>
+            Trade union deduction.
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.PensionDeduction">
+            <summary>
+            Pension deduction.
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.AttachmentOfEarnings">
+            <summary>
+            The attachment of earnings
+            </summary>
+        </member>
+        <member name="F:GoApi.Payroll.PayItemProcessingType.AttachmentOfEarningsTax">
+            <summary>
+            The attachment of earnings tax
+            Note: this processing type needs to be done after trade union and pension deduction.
+            </summary>
+        </member>
         <member name="T:GoApi.Payroll.PayItemService">
             <summary>
-            Pay item service used to query pay items. (Norwegian: Lønnsarter)
+            Pay item service used to query <see cref="T:GoApi.Payroll.PayItem"/>. (Norwegian: Lønnsarter)
             </summary>
         </member>
         <member name="M:GoApi.Payroll.PayItemService.#ctor(GoApi.Core.IAuthorization)">
@@ -3773,9 +5047,15 @@
             </summary>
             <value><c>true</c> if this instance is locked; otherwise, <c>false</c>.</value>
         </member>
+        <member name="P:GoApi.Payroll.SalaryLine.IsDeletedByUser">
+            <summary>
+            Flag indicating whether a instance has been deleted by a user in PowerOffice Go.
+            </summary>
+            <value><c>true</c> if this instance is deleted by user; otherwise, <c>false</c>.</value>
+        </member>
         <member name="T:GoApi.Payroll.SalaryLineService">
             <summary>
-            SalaryLineService that provides methods for querying and manipulating salary lines. These salary lines will appear on the next payroll generated in PowerOffice Go.
+            SalaryLineService that provides methods for querying and manipulating <see cref="T:GoApi.Payroll.SalaryLine"/>. These salary lines will appear on the next payroll generated in PowerOffice Go.
             </summary>
         </member>
         <member name="M:GoApi.Payroll.SalaryLineService.#ctor(GoApi.Core.IAuthorization)">
@@ -3879,6 +5159,12 @@
             </summary>
             <value><c>true</c> if this instance is active; otherwise, <c>false</c>.</value>
         </member>
+        <member name="P:GoApi.Products.Product.CreatedFromImportJournalId">
+            <summary>
+            Gets the created from import journal identifier.
+            </summary>
+            <value>The created from import journal identifier.</value>
+        </member>
         <member name="T:GoApi.Products.ProductGroup">
             <summary>
             Class ProductGroup representing a group for products. Many of the properties on the product group will be inherited by products in this group.
@@ -3950,9 +5236,15 @@
             </summary>
             <value>The last changed date.</value>
         </member>
+        <member name="P:GoApi.Products.ProductGroup.CreatedFromImportJournalId">
+            <summary>
+            Gets the created from import journal identifier.
+            </summary>
+            <value>The created from import journal identifier.</value>
+        </member>
         <member name="T:GoApi.Products.ProductGroupService">
             <summary>
-            ProductGroupService that provides methods for querying and manipulating product groups.
+            ProductGroupService that provides methods for querying and manipulating <see cref="T:GoApi.Products.ProductGroup"/>.
             </summary>
         </member>
         <member name="M:GoApi.Products.ProductGroupService.#ctor(GoApi.Core.IAuthorization)">
@@ -3963,7 +5255,7 @@
         </member>
         <member name="T:GoApi.Products.ProductService">
             <summary>
-            ProductService that provides methods for querying and manipulating products.
+            ProductService that provides methods for querying and manipulating <see cref="T:GoApi.Products.Product"/>.
             </summary>
         </member>
         <member name="M:GoApi.Products.ProductService.#ctor(GoApi.Core.IAuthorization)">
@@ -3992,6 +5284,46 @@
                 The service
             </summary>
         </member>
+        <member name="T:GoApi.Projects.Location">
+            <summary>
+                Class representing a location for this client.
+            </summary>
+        </member>
+        <member name="P:GoApi.Projects.Location.Id">
+            <summary>
+                Gets or sets the identifier.
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:GoApi.Projects.Location.Name">
+            <summary>
+                Gets or sets the name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:GoApi.Projects.Location.Code">
+            <summary>
+                Gets or sets the code.
+            </summary>
+            <value>The code.</value>
+        </member>
+        <member name="P:GoApi.Projects.Location.IsActive">
+            <summary>
+                Gets or sets a value indicating whether this instance is active. Defaults to true.
+            </summary>
+            <value><c>null</c> if [is active] contains no value, <c>true</c> if [is active]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:GoApi.Projects.LocationService">
+            <summary>
+                Service to query, create and update <see cref="T:GoApi.Projects.Location" />
+            </summary>
+        </member>
+        <member name="M:GoApi.Projects.LocationService.#ctor(GoApi.Core.IAuthorization)">
+            <summary>
+                Initializes a new instance of the <see cref="T:GoApi.Projects.LocationService" /> class.
+            </summary>
+            <param name="authorization">The authorization.</param>
+        </member>
         <member name="T:GoApi.Projects.Project">
             <summary>
             Class Project representing a Project.
@@ -4011,7 +5343,7 @@
         </member>
         <member name="P:GoApi.Projects.Project.Code">
             <summary>
-                Gets or sets the code.
+                Gets or sets the code. If the project is a subproject, the syntax on the provided code must be "ParentProjectCode.Code".
             </summary>
             <value>The code.</value>
         </member>
@@ -4069,15 +5401,139 @@
             </summary>
             <value>The department code.</value>
         </member>
+        <member name="P:GoApi.Projects.Project.LocationCode">
+            <summary>
+            Gets or sets the location code.
+            </summary>
+            <value>The location code.</value>
+        </member>
+        <member name="P:GoApi.Projects.Project.AllowAllActivities">
+            <summary>
+            Gets or sets a value indicating whether [allow all activities].
+            </summary>
+            <value><c>null</c> if [allow all activities] contains no value, <c>true</c> if [allow all activities]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:GoApi.Projects.Project.AllowAllEmployees">
+            <summary>
+            Gets or sets a value indicating whether [allow all employees].
+            </summary>
+            <value><c>null</c> if [allow all employees] contains no value, <c>true</c> if [allow all employees]; otherwise, <c>false</c>.</value>
+        </member>
         <member name="P:GoApi.Projects.Project.LastChanged">
             <summary>
             Gets the last changed date.
             </summary>
             <value>The last changed date.</value>
         </member>
+        <member name="P:GoApi.Projects.Project.CreatedFromImportJournalId">
+            <summary>
+            Gets the created from import journal identifier.
+            </summary>
+            <value>The created from import journal identifier.</value>
+        </member>
+        <member name="T:GoApi.Projects.ProjectActivity">
+            <summary>
+                Project Activity representing an Activity that is a activity on a Project.
+            </summary>
+        </member>
+        <member name="P:GoApi.Projects.ProjectActivity.Id">
+            <summary>
+                Gets the identifier.
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:GoApi.Projects.ProjectActivity.ActivityCode">
+            <summary>
+                Gets or sets the activity code.
+            </summary>
+            <value>The activity code.</value>
+        </member>
+        <member name="P:GoApi.Projects.ProjectActivity.ProjectCode">
+            <summary>
+                Gets the project code.
+            </summary>
+            <value>The project code.</value>
+        </member>
+        <member name="P:GoApi.Projects.ProjectActivity.IsBillable">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:GoApi.Projects.ProjectActivity"/> is billable.
+            </summary>
+            <value><c>null</c> if [billable] contains no value, <c>true</c> if [billable]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:GoApi.Projects.ProjectActivityService`1">
+            <summary>
+                Class ProjectActivityService providing methods for querying, adding and removing project activities (
+                <see cref="T:GoApi.Projects.ProjectActivity" />) on a <see cref="T:GoApi.Projects.Project" />.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:GoApi.Projects.ProjectActivityService`1.GetUrlFor(`0,System.Nullable{System.Int64})">
+            <summary>
+                Generate the URL for the specified party contact controller method
+            </summary>
+            <param name="parent">The party.</param>
+            <param name="itemId">The item identifier.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:GoApi.Projects.ProjectActivityService`1.#ctor(GoApi.Core.IAuthorization,System.Uri)">
+            <summary>
+                Initializes a new instance of the <see cref="T:GoApi.Core.DataObjectCrudService`1" /> class.
+            </summary>
+            <param name="authorization">The connection.</param>
+            <param name="baseUri">The base URI.</param>
+        </member>
+        <member name="M:GoApi.Projects.ProjectActivityService`1.Post(`0,GoApi.Projects.ProjectActivity)">
+            <summary>
+                Adds the activity as a activity to the project. The activity has be be created through the activity service before
+                calling this method.
+            </summary>
+            <param name="parent">The project.</param>
+            <param name="entity">The activity.</param>
+            <returns>Activity.</returns>
+        </member>
+        <member name="M:GoApi.Projects.ProjectActivityService`1.Get(`0)">
+            <summary>
+                Get activitys for a given project by a LINQ expression
+            </summary>
+            <returns>IQueryable&lt;Activity&gt;.</returns>
+        </member>
+        <member name="M:GoApi.Projects.ProjectActivityService`1.Get">
+            <summary>
+                Get activitys for a given project by a LINQ expression
+            </summary>
+            <returns>IQueryable&lt;Activity&gt;.</returns>
+        </member>
+        <member name="M:GoApi.Projects.ProjectActivityService`1.Get(`0,System.Int64)">
+            <summary>
+                Gets the activity for a project by its Id.
+            </summary>
+            <param name="parent">The project.</param>
+            <param name="id">The identifier.</param>
+            <returns>Activity.</returns>
+        </member>
+        <member name="M:GoApi.Projects.ProjectActivityService`1.Get(System.Int64)">
+            <summary>
+                Gets the activity for a project by its Id.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns>Activity.</returns>
+        </member>
+        <member name="M:GoApi.Projects.ProjectActivityService`1.Delete(`0,GoApi.Projects.ProjectActivity)">
+            <summary>
+                Removes a activity from a project.
+            </summary>
+            <param name="parent">The project.</param>
+            <param name="entity">The activity.</param>
+            <returns>T.</returns>
+            <exception cref="T:System.Exception">
+                Entity must be of type DataObject
+                or
+                Key property of entity has illegal type
+            </exception>
+        </member>
         <member name="T:GoApi.Projects.ProjectService">
             <summary>
-            ProjectService providing methods for querying and manipulating Projects.
+            ProjectService providing methods for querying and manipulating <see cref="T:GoApi.Projects.Project"/>.
             </summary>
         </member>
         <member name="M:GoApi.Projects.ProjectService.#ctor(GoApi.Core.IAuthorization)">
@@ -4085,6 +5541,16 @@
                 Initializes a new instance of the <see cref="T:GoApi.Projects.ProjectService" /> class.
             </summary>
             <param name="authorization">The authorization.</param>
+        </member>
+        <member name="P:GoApi.Projects.ProjectService.TeamMember">
+            <summary>
+                Team member service.
+            </summary>
+        </member>
+        <member name="P:GoApi.Projects.ProjectService.Activity">
+            <summary>
+                Project activity service.
+            </summary>
         </member>
         <member name="T:GoApi.Projects.ProjectStatus">
             <summary>
@@ -4110,6 +5576,106 @@
             <summary>
                 Archived (inactive)
             </summary>
+        </member>
+        <member name="T:GoApi.Projects.ProjectTeamMember">
+            <summary>
+                Project team member representing a Employee that is a team member on a Project.
+            </summary>
+        </member>
+        <member name="P:GoApi.Projects.ProjectTeamMember.Id">
+            <summary>
+                Gets the identifier.
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:GoApi.Projects.ProjectTeamMember.EmployeeCode">
+            <summary>
+                Gets or sets the employee code.
+            </summary>
+            <value>The employee code.</value>
+        </member>
+        <member name="P:GoApi.Projects.ProjectTeamMember.ProjectCode">
+            <summary>
+                Gets the project code.
+            </summary>
+            <value>The project code.</value>
+        </member>
+        <member name="P:GoApi.Projects.ProjectTeamMember.HourlyRate">
+            <summary>
+                Gets or sets the hourly rate for the employee on this project.
+            </summary>
+            <value>The hourly rate.</value>
+        </member>
+        <member name="T:GoApi.Projects.ProjectTeamMemberService`1">
+            <summary>
+                Class ProjectTeamMemberService providing methods for querying, adding and removing team members (
+                <see cref="T:GoApi.Projects.ProjectTeamMember" />) on a <see cref="T:GoApi.Projects.Project" />.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:GoApi.Projects.ProjectTeamMemberService`1.GetUrlFor(`0,System.Nullable{System.Int64})">
+            <summary>
+                Generate the URL for the specified party contact controller method
+            </summary>
+            <param name="parent">The party.</param>
+            <param name="itemId">The item identifier.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:GoApi.Projects.ProjectTeamMemberService`1.#ctor(GoApi.Core.IAuthorization,System.Uri)">
+            <summary>
+                Initializes a new instance of the <see cref="T:GoApi.Core.DataObjectCrudService`1" /> class.
+            </summary>
+            <param name="authorization">The connection.</param>
+            <param name="baseUri">The base URI.</param>
+        </member>
+        <member name="M:GoApi.Projects.ProjectTeamMemberService`1.Post(`0,GoApi.Projects.ProjectTeamMember)">
+            <summary>
+                Adds the project team member as a team member to the project. The employee with the specified employee code has be
+                be created through the employee service before calling this method.
+            </summary>
+            <param name="parent">The project.</param>
+            <param name="entity">The project team member.</param>
+            <returns>ProjectTeamMember.</returns>
+        </member>
+        <member name="M:GoApi.Projects.ProjectTeamMemberService`1.Get(`0)">
+            <summary>
+                Get team members for a given project by a LINQ expression
+            </summary>
+            <returns>IQueryable&lt;ProjectTeamMember&gt;.</returns>
+        </member>
+        <member name="M:GoApi.Projects.ProjectTeamMemberService`1.Get">
+            <summary>
+                Get team members for a given project by a LINQ expression
+            </summary>
+            <returns>IQueryable&lt;ProjectTeamMember&gt;.</returns>
+        </member>
+        <member name="M:GoApi.Projects.ProjectTeamMemberService`1.Get(`0,System.Int64)">
+            <summary>
+                Gets the project team member for a project by its Id.
+            </summary>
+            <param name="parent">The project.</param>
+            <param name="id">The identifier.</param>
+            <returns>ProjectTeamMember.</returns>
+        </member>
+        <member name="M:GoApi.Projects.ProjectTeamMemberService`1.Get(System.Int64)">
+            <summary>
+                Gets the project team member for a project by its Id.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns>ProjectTeamMember.</returns>
+        </member>
+        <member name="M:GoApi.Projects.ProjectTeamMemberService`1.Delete(`0,GoApi.Projects.ProjectTeamMember)">
+            <summary>
+                Removes a project team member from a project.
+            </summary>
+            <param name="parent">The project.</param>
+            <param name="entity">The project team member.</param>
+            <returns>T.</returns>
+            <exception cref="T:System.Exception">
+                Entity must be of type DataObject
+                or
+                Key property of entity has illegal type
+            </exception>
         </member>
         <member name="T:GoApi.Reporting.AccountTransactions.AccountTransaction">
             <summary>
@@ -4246,9 +5812,63 @@
             </summary>
             <value>The employee account no.</value>
         </member>
+        <member name="P:GoApi.Reporting.AccountTransactions.AccountTransaction.VoucherDueDate">
+            <summary>
+            Gets or sets the voucher due date.
+            </summary>
+            <value>The voucher due date.</value>
+        </member>
+        <member name="P:GoApi.Reporting.AccountTransactions.AccountTransaction.VoucherReference">
+            <summary>
+            Gets or sets the voucher reference.
+            </summary>
+            <value>The voucher reference.</value>
+        </member>
+        <member name="P:GoApi.Reporting.AccountTransactions.AccountTransaction.VoucherCID">
+            <summary>
+            Gets or sets the voucher cid.
+            </summary>
+            <value>The voucher cid.</value>
+        </member>
+        <member name="P:GoApi.Reporting.AccountTransactions.AccountTransaction.VoucherCreditNoteReference">
+            <summary>
+            Gets or sets the voucher credit note reference.
+            </summary>
+            <value>The voucher credit note reference.</value>
+        </member>
+        <member name="P:GoApi.Reporting.AccountTransactions.AccountTransaction.VoucherId">
+            <summary>
+            Gets or sets the voucher identifier.
+            </summary>
+            <value>The voucher identifier.</value>
+        </member>
+        <member name="P:GoApi.Reporting.AccountTransactions.AccountTransaction.DocumentNo">
+            <summary>
+            Gets or sets the document no. On invoices this property will contain the invoice number.
+            </summary>
+            <value>The document no.</value>
+        </member>
+        <member name="P:GoApi.Reporting.AccountTransactions.AccountTransaction.CreatedFromImportJournalId">
+            <summary>
+            Gets the created from import journal identifier.
+            </summary>
+            <value>The created from import journal identifier.</value>
+        </member>
+        <member name="P:GoApi.Reporting.AccountTransactions.AccountTransaction.IsCreatedFromEhf">
+            <summary>
+            Gets or sets a value indicating whether this instance is created from ehf.
+            </summary>
+            <value><c>true</c> if this instance is created from ehf; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:GoApi.Reporting.AccountTransactions.AccountTransaction.BankTransferId">
+            <summary>
+            Gets the bank transfer identifier. If provided on an accounting entry, this accounting entry is created from a remittance of a bank transfer with a given id on a client bank account.
+            </summary>
+            <value>The bank transfer identifier.</value>
+        </member>
         <member name="T:GoApi.Reporting.AccountTransactions.AccountTransactionsService">
             <summary>
-                Service for quering Account Transactions.
+                Service for quering <see cref="T:GoApi.Reporting.AccountTransactions.AccountTransaction"/>.
             </summary>
         </member>
         <member name="M:GoApi.Reporting.AccountTransactions.AccountTransactionsService.#ctor(GoApi.Core.IAuthorization)">
@@ -4388,9 +6008,23 @@
         </member>
         <member name="P:GoApi.Reporting.InvoiceJournal.InvoiceJournalLine.InvoiceStatus">
             <summary>
-            Gets or sets the invoice status.
+            Gets the invoice status.
             </summary>
             <value>The invoice status.</value>
+        </member>
+        <member name="P:GoApi.Reporting.InvoiceJournal.InvoiceJournalLine.ReminderSentDate">
+            <summary>
+            Gets the reminder sent date. If <see cref="P:GoApi.Reporting.InvoiceJournal.InvoiceJournalLine.InvoiceStatus"/> on this line is PaymentReminderSent, NoticeOfDebtCollectionSent, PaymentDemantSent or WarrantOfExecutionSent;
+            this property will contain the date witch the reminder was sent.
+            </summary>
+            <value>The reminder sent date.</value>
+        </member>
+        <member name="P:GoApi.Reporting.InvoiceJournal.InvoiceJournalLine.ReminderDueDate">
+            <summary>
+            Gets the reminder due date. If <see cref="P:GoApi.Reporting.InvoiceJournal.InvoiceJournalLine.InvoiceStatus"/> on this line is PaymentReminderSent, NoticeOfDebtCollectionSent, PaymentDemantSent or WarrantOfExecutionSent;
+            this property will contain the date witch the reminder is due.
+            </summary>
+            <value>The reminder due date.</value>
         </member>
         <member name="P:GoApi.Reporting.InvoiceJournal.InvoiceJournalLine.ImportedOrderNo">
             <summary>
@@ -4398,10 +6032,46 @@
             </summary>
             <value>The imported order no.</value>
         </member>
+        <member name="P:GoApi.Reporting.InvoiceJournal.InvoiceJournalLine.CurrencyRate">
+            <summary>
+            Gets or sets the currency rate.
+            </summary>
+            <value>The currency rate.</value>
+        </member>
+        <member name="P:GoApi.Reporting.InvoiceJournal.InvoiceJournalLine.CreatedFromImportJournalId">
+            <summary>
+            Gets the created from import journal identifier.
+            </summary>
+            <value>The created from import journal identifier.</value>
+        </member>
+        <member name="P:GoApi.Reporting.InvoiceJournal.InvoiceJournalLine.IsOnHold">
+            <summary>
+            Gets a value indicating whether this instance is on hold.
+            </summary>
+            <value><c>true</c> if this instance is on hold; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:GoApi.Reporting.InvoiceJournal.InvoiceJournalLine.ExternalCaseNumber">
+            <summary>
+            Gets or sets the external case number. Used debt collection companies to set their external reference when following up invoices.
+            </summary>
+            <value>The external case number.</value>
+        </member>
+        <member name="P:GoApi.Reporting.InvoiceJournal.InvoiceJournalLine.LastChanged">
+            <summary>
+            Gets the last changed date.
+            </summary>
+            <value>The last changed date.</value>
+        </member>
         <member name="T:GoApi.Reporting.InvoiceJournal.InvoiceJournalSalesLine">
             <summary>
                 Class InvoiceJournalSalesLine. Specifying one sales line on an invoice or credit note.
             </summary>
+        </member>
+        <member name="P:GoApi.Reporting.InvoiceJournal.InvoiceJournalSalesLine.Id">
+            <summary>
+                Gets the unique identifier for this line.
+            </summary>
+            <value>The identifier.</value>
         </member>
         <member name="P:GoApi.Reporting.InvoiceJournal.InvoiceJournalSalesLine.VoucherLineType">
             <summary>
@@ -4465,7 +6135,7 @@
         </member>
         <member name="T:GoApi.Reporting.InvoiceJournal.InvoiceJournalService">
             <summary>
-                Class InvoiceJournalService for querying invoice journal on a client.
+                Service for querying <see cref="T:GoApi.Reporting.InvoiceJournal.InvoiceJournalLine"/>on a client.
             </summary>
         </member>
         <member name="M:GoApi.Reporting.InvoiceJournal.InvoiceJournalService.#ctor(GoApi.Core.IAuthorization)">
@@ -4496,6 +6166,14 @@
             </summary>
             <param name="id">The invoice identifier.</param>
             <returns>Stream.</returns>
+        </member>
+        <member name="M:GoApi.Reporting.InvoiceJournal.InvoiceJournalService.SetExternalCaseNumber(System.Guid,System.String)">
+            <summary>
+            Sets the external case number.
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="externalCaseNumber">The external case number.</param>
+            <returns><c>true</c> if update was successfull, <c>false</c> otherwise.</returns>
         </member>
         <member name="T:GoApi.Reporting.InvoiceJournal.InvoiceStatus">
             <summary>
@@ -4638,6 +6316,12 @@
             </summary>
             <value>The created date.</value>
         </member>
+        <member name="P:GoApi.Reporting.Ledger.BaseLedgerEntry.CreatedFromImportJournalId">
+            <summary>
+            Gets the created from import journal identifier.
+            </summary>
+            <value>The created from import journal identifier.</value>
+        </member>
         <member name="T:GoApi.Reporting.Ledger.CustomerLedgerEntry">
             <summary>
                 Class CustomerLedgerEntry representing a customer subledger entry.
@@ -4657,7 +6341,7 @@
         </member>
         <member name="T:GoApi.Reporting.Ledger.CustomerLedgerService">
             <summary>
-                Class CustomerLedgerService providing methods for querying and matching customer subledger entries.
+                Service providing methods for querying and matching customer subledger entries (<see cref="T:GoApi.Reporting.Ledger.CustomerLedgerEntry"/>).
             </summary>
         </member>
         <member name="M:GoApi.Reporting.Ledger.CustomerLedgerService.#ctor(GoApi.Core.IAuthorization)">
@@ -4737,9 +6421,15 @@
             </summary>
             <value>The supplier.</value>
         </member>
+        <member name="P:GoApi.Reporting.Ledger.SupplierLedgerEntry.IsCreatedFromEhf">
+            <summary>
+            Gets or sets a value indicating whether this instance is created from ehf.
+            </summary>
+            <value><c>true</c> if this instance is created from ehf; otherwise, <c>false</c>.</value>
+        </member>
         <member name="T:GoApi.Reporting.Ledger.SupplierLedgerService">
             <summary>
-                Class SupplierLedgerService providing methods for querying and matching supplier subledger entries.
+                Service providing methods for querying and matching supplier subledger entries (<see cref="T:GoApi.Reporting.Ledger.SupplierLedgerEntry"/>).
             </summary>
         </member>
         <member name="M:GoApi.Reporting.Ledger.SupplierLedgerService.#ctor(GoApi.Core.IAuthorization)">
@@ -4861,7 +6551,7 @@
         </member>
         <member name="T:GoApi.Reporting.TrialBalance.TrialBalanceService">
             <summary>
-                Service for quering Trial Balance
+                Service for quering <see cref="T:GoApi.Reporting.TrialBalance.TrialBalanceLine"/>.
             </summary>
         </member>
         <member name="M:GoApi.Reporting.TrialBalance.TrialBalanceService.#ctor(GoApi.Core.IAuthorization)">
@@ -4894,7 +6584,7 @@
         </member>
         <member name="T:GoApi.Reporting.Usage.UsageService">
             <summary>
-                Service for quering Usage.
+                Service for quering <see cref="T:GoApi.Reporting.Usage.Usage"/>.
             </summary>
         </member>
         <member name="M:GoApi.Reporting.Usage.UsageService.#ctor(GoApi.Core.IAuthorization)">
@@ -5020,11 +6710,23 @@
             </summary>
             <value>The contact person identifier.</value>
         </member>
+        <member name="P:GoApi.SalesOrders.SalesOrder.DeliveryDate">
+            <summary>
+                Gets or sets the delivery date.
+            </summary>
+            <value>The delivery date.</value>
+        </member>
         <member name="P:GoApi.SalesOrders.SalesOrder.SalesOrderLines">
             <summary>
                 Gets or sets the sales order lines.
             </summary>
             <value>The sales order lines.</value>
+        </member>
+        <member name="P:GoApi.SalesOrders.SalesOrder.PurchaseOrderNo">
+            <summary>
+            Gets or sets the purchase order no.
+            </summary>
+            <value>The purchase order no.</value>
         </member>
         <member name="M:GoApi.SalesOrders.SalesOrder.AddSalesOrderLine(GoApi.SalesOrders.SalesOrderLine)">
             <summary>
@@ -5108,6 +6810,12 @@
             </summary>
             <value>The sales order line unit price.</value>
         </member>
+        <member name="P:GoApi.SalesOrders.SalesOrderLine.SortOrder">
+            <summary>
+                Gets or sets the sort order of the line.
+            </summary>
+            <value>The sort order.</value>
+        </member>
         <member name="T:GoApi.SalesOrders.SalesOrderRecurringInfo">
             <summary>
                 Class containing info about whether a sales order is recurring (repeating).
@@ -5162,6 +6870,12 @@
             </summary>
             <value>The next recurring invoice date.</value>
         </member>
+        <member name="P:GoApi.SalesOrders.SalesOrderRecurringInfo.RecurringDaysInAdvance">
+            <summary>
+                Gets or sets a number of days in advance of the next recurring invoice date the invoice will be processed.
+            </summary>
+            <value>The next recurring invoice date.</value>
+        </member>
         <member name="T:GoApi.SalesOrders.SalesOrderSendFrequencyUnit">
             <summary>
             Enum SalesOrderSendFrequencyUnit defining how often a recurring invoice will be sent out.
@@ -5202,6 +6916,126 @@
             Invoice will be sent automatically to customer.
             </summary>
         </member>
+        <member name="T:GoApi.TimeTracking.Activity">
+            <summary>
+                An activity detailing hour usage.
+            </summary>
+        </member>
+        <member name="P:GoApi.TimeTracking.Activity.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:GoApi.TimeTracking.Activity.ActivityType">
+            <summary>
+            Gets or sets the type of the activity. This is a required property on new entities and cannot be set too <see cref="F:GoApi.TimeTracking.ActivityType.None"/>
+            </summary>
+            <value>The type of the activity.</value>
+        </member>
+        <member name="P:GoApi.TimeTracking.Activity.Code">
+            <summary>
+            Gets or sets the code. This is a required property and is unique per client with a max length of 50.
+            </summary>
+            <value>The code.</value>
+        </member>
+        <member name="P:GoApi.TimeTracking.Activity.Name">
+            <summary>
+            Gets or sets the name. This is a required property with a max length of 400.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:GoApi.TimeTracking.Activity.HourlyRate">
+            <summary>
+            Gets or sets the hourly rate.
+            </summary>
+            <value>The hourly rate.</value>
+        </member>
+        <member name="P:GoApi.TimeTracking.Activity.ProductCode">
+            <summary>
+            Gets or sets the product code. Only the <see cref="F:GoApi.TimeTracking.ActivityType.Billable" /> activity type supports a product relation.
+            </summary>
+            <value>The product code.</value>
+        </member>
+        <member name="P:GoApi.TimeTracking.Activity.IsActive">
+            <summary>
+            Gets or sets a value indicating whether this instance is active. Defaults to true on new entities.
+            </summary>
+            <value><c>null</c> if [is active] contains no value, <c>true</c> if [is active]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:GoApi.TimeTracking.Activity.LastChanged">
+            <summary>
+            Gets the last changed date.
+            </summary>
+            <value>The last changed date.</value>
+        </member>
+        <member name="P:GoApi.TimeTracking.Activity.CreatedFromImportJournalId">
+            <summary>
+            Gets the created from import journal identifier.
+            </summary>
+            <value>The created from import journal identifier.</value>
+        </member>
+        <member name="T:GoApi.TimeTracking.ActivityService">
+            <summary>
+                Service to query, create and update <see cref="T:GoApi.TimeTracking.Activity" />
+            </summary>
+        </member>
+        <member name="M:GoApi.TimeTracking.ActivityService.#ctor(GoApi.Core.IAuthorization)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GoApi.TimeTracking.ActivityService"/> class.
+            </summary>
+            <param name="authorization">The authorization.</param>
+        </member>
+        <member name="T:GoApi.TimeTracking.ActivityType">
+            <summary>
+            Enum ActivityType specifying the type of activity.
+            </summary>
+        </member>
+        <member name="F:GoApi.TimeTracking.ActivityType.None">
+            <summary>
+            Undefined
+            </summary>
+        </member>
+        <member name="F:GoApi.TimeTracking.ActivityType.Billable">
+            <summary>
+            Billable productive hours
+            </summary>
+        </member>
+        <member name="F:GoApi.TimeTracking.ActivityType.NonBillable">
+            <summary>
+            Non-billable productive hours
+            </summary>
+        </member>
+        <member name="F:GoApi.TimeTracking.ActivityType.Internal">
+            <summary>
+            An internal activity
+            </summary>
+        </member>
+        <member name="F:GoApi.TimeTracking.ActivityType.PaidSickLeave">
+            <summary>
+            Paid sick leave
+            </summary>
+        </member>
+        <member name="F:GoApi.TimeTracking.ActivityType.UnpaidSickLeave">
+            <summary>
+            Unpaid sick leave
+            </summary>
+        </member>
+        <member name="F:GoApi.TimeTracking.ActivityType.PaidLeave">
+            <summary>
+            Paid leave of absence
+            </summary>
+        </member>
+        <member name="F:GoApi.TimeTracking.ActivityType.UnpaidLeave">
+            <summary>
+            Unpaid leave of absence
+            </summary>
+        </member>
+        <member name="F:GoApi.TimeTracking.ActivityType.Vacation">
+            <summary>
+            Vacation
+            </summary>
+        </member>
         <member name="T:GoApi.TimeTracking.HourType">
             <summary>
             Class HourType.
@@ -5240,9 +7074,15 @@
             </summary>
             <value><c>true</c> if this instance is active; otherwise, <c>false</c>.</value>
         </member>
+        <member name="P:GoApi.TimeTracking.HourType.LastChanged">
+            <summary>
+            Gets the last changed date.
+            </summary>
+            <value>The last changed date.</value>
+        </member>
         <member name="T:GoApi.TimeTracking.HourTypeService">
             <summary>
-            Service to query, create and update <see cref="T:GoApi.TimeTracking.HourType" />
+            Service to query, create and update <see cref="T:GoApi.TimeTracking.HourType" />.
             </summary>
         </member>
         <member name="M:GoApi.TimeTracking.HourTypeService.#ctor(GoApi.Core.IAuthorization)">
@@ -5250,6 +7090,88 @@
             Initializes a new instance of the <see cref="T:GoApi.Core.DataObjectCrudService`1" /> class.
             </summary>
             <param name="authorization">The connection.</param>
+        </member>
+        <member name="T:GoApi.TimeTracking.TimeTrackingEntry">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GoApi.TimeTracking.TimeTrackingEntry.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:GoApi.TimeTracking.TimeTrackingEntry.ActivityCode">
+            <summary>
+            Gets or sets the activity code. Required property on this entity.
+            </summary>
+            <value>The activity code.</value>
+        </member>
+        <member name="P:GoApi.TimeTracking.TimeTrackingEntry.ProjectCode">
+            <summary>
+            Gets or sets the project code.
+            </summary>
+            <value>The project code.</value>
+        </member>
+        <member name="P:GoApi.TimeTracking.TimeTrackingEntry.EmployeeCode">
+            <summary>
+            Gets or sets the employee code. Required property on this entity.
+            </summary>
+            <value>The employee code.</value>
+        </member>
+        <member name="P:GoApi.TimeTracking.TimeTrackingEntry.CustomerCode">
+            <summary>
+            Gets or sets the customer code.
+            </summary>
+            <value>The customer code.</value>
+        </member>
+        <member name="P:GoApi.TimeTracking.TimeTrackingEntry.HourType">
+            <summary>
+            Gets or sets the type of the hour. If provided, there must exist an HourType with the same description as this property. If no value is set this time tracking entry will default to ordinary time.
+            </summary>
+            <value>The type of the hour.</value>
+        </member>
+        <member name="P:GoApi.TimeTracking.TimeTrackingEntry.Date">
+            <summary>
+            Gets or sets the date.
+            </summary>
+            <value>The date.</value>
+        </member>
+        <member name="P:GoApi.TimeTracking.TimeTrackingEntry.Hours">
+            <summary>
+            Gets or sets the number of hours.
+            </summary>
+            <value>The number of hours.</value>
+        </member>
+        <member name="P:GoApi.TimeTracking.TimeTrackingEntry.IsLocked">
+            <summary>
+            Gets a value indicating whether this instance is locked. Time tracking entries that have been invoiced, transfered to payroll, submitted for approval and/or is approved can no longer be edited.
+            </summary>
+            <value><c>true</c> if this instance is locked; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:GoApi.TimeTracking.TimeTrackingEntry.Comment">
+            <summary>
+            Gets or sets the comment.
+            </summary>
+            <value>The comment.</value>
+        </member>
+        <member name="P:GoApi.TimeTracking.TimeTrackingEntry.LastChanged">
+            <summary>
+            Gets the last changed date.
+            </summary>
+            <value>The last changed date.</value>
+        </member>
+        <member name="T:GoApi.TimeTracking.TimeTrackingEntryService">
+            <summary>
+            Service to query, create and update <see cref="T:GoApi.TimeTracking.TimeTrackingEntry" />
+            </summary>
+        </member>
+        <member name="M:GoApi.TimeTracking.TimeTrackingEntryService.#ctor(GoApi.Core.IAuthorization)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GoApi.TimeTracking.TimeTrackingEntryService"/> class.
+            </summary>
+            <param name="authorization">The authorization.</param>
         </member>
         <member name="T:GoApi.TimeTracking.TimeTrackingServices">
             <summary>
@@ -5262,11 +7184,23 @@
             </summary>
             <param name="authorization">The authorization.</param>
         </member>
-        <member name="P:GoApi.TimeTracking.TimeTrackingServices.PayItem">
+        <member name="P:GoApi.TimeTracking.TimeTrackingServices.HourType">
             <summary>
             Hour Type Service
             </summary>
             <value>The hour type service.</value>
+        </member>
+        <member name="P:GoApi.TimeTracking.TimeTrackingServices.Activity">
+            <summary>
+            Activity Service
+            </summary>
+            <value>The activity service.</value>
+        </member>
+        <member name="P:GoApi.TimeTracking.TimeTrackingServices.TimeTrackingEntry">
+            <summary>
+            Time Tracking Entry Service
+            </summary>
+            <value>The time tracking entry service.</value>
         </member>
     </members>
 </doc>

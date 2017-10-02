@@ -8,8 +8,6 @@ C:\Kode\GoApiGithub\go-api\Examples\Payroll\bin\Debug\DotNetOpenAuth.OAuth2.dll
 C:\Kode\GoApiGithub\go-api\Examples\Payroll\bin\Debug\GoApi.dll
 C:\Kode\GoApiGithub\go-api\Examples\Payroll\bin\Debug\Microsoft.Data.Edm.dll
 C:\Kode\GoApiGithub\go-api\Examples\Payroll\bin\Debug\Newtonsoft.Json.dll
-C:\Kode\GoApiGithub\go-api\Examples\Payroll\bin\Debug\System.Net.Http.dll
-C:\Kode\GoApiGithub\go-api\Examples\Payroll\bin\Debug\System.Net.Http.WebRequest.dll
 C:\Kode\GoApiGithub\go-api\Examples\Payroll\bin\Debug\DotNetOpenAuth.Core.xml
 C:\Kode\GoApiGithub\go-api\Examples\Payroll\bin\Debug\DotNetOpenAuth.OAuth2.xml
 C:\Kode\GoApiGithub\go-api\Examples\Payroll\bin\Debug\DotNetOpenAuth.OAuth2.Client.xml
@@ -17,8 +15,6 @@ C:\Kode\GoApiGithub\go-api\Examples\Payroll\bin\Debug\DotNetOpenAuth.OAuth2.Clie
 C:\Kode\GoApiGithub\go-api\Examples\Payroll\bin\Debug\GoApi.xml
 C:\Kode\GoApiGithub\go-api\Examples\Payroll\bin\Debug\Microsoft.Data.Edm.xml
 C:\Kode\GoApiGithub\go-api\Examples\Payroll\bin\Debug\Newtonsoft.Json.xml
-C:\Kode\GoApiGithub\go-api\Examples\Payroll\bin\Debug\System.Net.Http.xml
-C:\Kode\GoApiGithub\go-api\Examples\Payroll\bin\Debug\System.Net.Http.WebRequest.xml
 C:\Kode\GoApiGithub\go-api\Examples\Payroll\bin\Debug\de\Microsoft.Data.Edm.resources.dll
 C:\Kode\GoApiGithub\go-api\Examples\Payroll\bin\Debug\es\Microsoft.Data.Edm.resources.dll
 C:\Kode\GoApiGithub\go-api\Examples\Payroll\bin\Debug\fr\Microsoft.Data.Edm.resources.dll
@@ -31,3 +27,7 @@ C:\Kode\GoApiGithub\go-api\Examples\Payroll\bin\Debug\zh-Hant\Microsoft.Data.Edm
 C:\Kode\GoApiGithub\go-api\Examples\Payroll\obj\Debug\PayrollDemo.csprojResolveAssemblyReference.cache
 C:\Kode\GoApiGithub\go-api\Examples\Payroll\obj\Debug\PayrollDemo.exe
 C:\Kode\GoApiGithub\go-api\Examples\Payroll\obj\Debug\PayrollDemo.pdb
+C:\Kode\GoApiGithub\go-api\Examples\Payroll\bin\Debug\System.Net.Http.Extensions.dll
+C:\Kode\GoApiGithub\go-api\Examples\Payroll\bin\Debug\System.Net.Http.Primitives.dll
+C:\Kode\GoApiGithub\go-api\Examples\Payroll\bin\Debug\System.Net.Http.Extensions.xml
+C:\Kode\GoApiGithub\go-api\Examples\Payroll\bin\Debug\System.Net.Http.Primitives.xml

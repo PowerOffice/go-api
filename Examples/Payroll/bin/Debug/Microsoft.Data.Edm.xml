@@ -6421,6 +6421,11 @@
             Common base class for definitions of EDM structured types.
             </summary>
         </member>
+        <member name="F:Microsoft.Data.Edm.Library.EdmStructuredType.LockObj">
+            <summary>
+            The lock used when accessing the internal cached properties.
+            </summary>
+        </member>
         <member name="M:Microsoft.Data.Edm.Library.EdmStructuredType.#ctor(System.Boolean,System.Boolean,Microsoft.Data.Edm.IEdmStructuredType)">
             <summary>
             Initializes a new instance of the <see cref="T:Microsoft.Data.Edm.Library.EdmStructuredType"/> class.
