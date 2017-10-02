@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracking", "TimeTrackin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecurringInvoice", "RecurringInvoice\RecurringInvoice.csproj", "{84E815BD-214B-4E61-A6D9-1289E105CD9F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneralLedgerAccounts", "GeneralLedgerAccounts\GeneralLedgerAccounts.csproj", "{C9847B0B-206B-4994-97B6-18BC61D0DFD5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{84E815BD-214B-4E61-A6D9-1289E105CD9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84E815BD-214B-4E61-A6D9-1289E105CD9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84E815BD-214B-4E61-A6D9-1289E105CD9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9847B0B-206B-4994-97B6-18BC61D0DFD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9847B0B-206B-4994-97B6-18BC61D0DFD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9847B0B-206B-4994-97B6-18BC61D0DFD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9847B0B-206B-4994-97B6-18BC61D0DFD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
