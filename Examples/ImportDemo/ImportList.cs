@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using GoApi;
 using GoApi.Core;
+using GoApi.Global;
 
 namespace ImportDemo
 {
@@ -10,7 +12,7 @@ namespace ImportDemo
         /// <summary>
         /// Lists the unposted imports.
         /// </summary>
-        public static void ListUnpostedImports()
+        public static async Task ListUnpostedImports()
         {
             // Initialize the PowerOffice Go API and request authorization
             // Set up authorization settings
@@ -18,10 +20,11 @@ namespace ImportDemo
             {
                 ApplicationKey = "<You Application Key Here>",
                 ClientKey = "<PowerOffice Go Client Key Here>",
-                TokenStore = new BasicTokenStore(@"my.tokenstore")
+                TokenStore = new BasicTokenStore(@"my.tokenstore"),
+                EndPointHost = Settings.EndPointMode.Production //For authorization against the demo environment - Change this to Settings.EndPointMode.Demo
             };
-            
-            var api = new Go(authorizationSettings);
+
+            var api = await Go.CreateAsync(authorizationSettings);
 
             // Get list of imports
             Console.WriteLine("List of unposted imports:");

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using GoApi;
 using GoApi.Core;
+using GoApi.Global;
 using GoApi.Import;
 using GoApi.Party;
 using GoApi.Products;
@@ -14,18 +16,19 @@ namespace ImportDemo
         /// <summary>
         ///     This is is very simple demo of how to create a sales order import.
         /// </summary>
-        public static void SalesOrderImportDemo()
+        public static async Task SalesOrderImportDemo()
         {
             // Set up authorization settings
             var authorizationSettings = new AuthorizationSettings
             {
                 ApplicationKey = "<You Application Key Here>",
                 ClientKey = "<PowerOffice Go Client Key Here>",
-                TokenStore = new BasicTokenStore(@"my.tokenstore")
+                TokenStore = new BasicTokenStore(@"my.tokenstore"),
+                EndPointHost = Settings.EndPointMode.Production //For authorization against the demo environment - Change this to Settings.EndPointMode.Demo
             };
 
             // Initialize the PowerOffice Go API and request authorization
-            var api = new Go(authorizationSettings);
+            var api = await Go.CreateAsync(authorizationSettings);
 
             //First we need to make sure that all customers that we're using are created in PowerOffice Go
             //For more a more detailed example on how to do changes to customers, check out the CustomerDemo on https://github.com/PowerOffice/go-api/tree/master/Examples

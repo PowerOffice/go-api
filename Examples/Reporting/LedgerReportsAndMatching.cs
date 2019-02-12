@@ -1,24 +1,31 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using GoApi;
 using GoApi.Core;
+using GoApi.Global;
 using GoApi.Reporting.Ledger;
 
 namespace Reporting
 {
     public class LedgerReportsAndMatching
     {
-        public static void CustomerLedger()
+        /// <summary>
+        /// This demo shows how the customer ledger can be printed out, matched and unmatched.
+        /// The same code can run for supplier ledger by changing api.Reporting.CustomerLedger to api.Reporting.SupplierLedger.
+        /// </summary>
+        public static async Task CustomerLedger()
         {
             var authorizationSettings = new AuthorizationSettings
             {
                 ApplicationKey = "<You Application Key Here>",
                 ClientKey = "<PowerOffice Go Client Key Here>",
-                TokenStore = new BasicTokenStore(@"my.tokenstore")
+                TokenStore = new BasicTokenStore(@"my.tokenstore"),
+                EndPointHost = Settings.EndPointMode.Production //For authorization against the demo environment - Change this to Settings.EndPointMode.Demo
             };
 
             // Initialize the PowerOffice Go API and request authorization
-            var api = new Go(authorizationSettings);
+            var api = await Go.CreateAsync(authorizationSettings);
 
             Console.WriteLine("Customer ledger:");
             PrintStatement(api);

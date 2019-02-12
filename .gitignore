@@ -1,0 +1,21 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Examples/.vs/Examples/v15
+/Examples/AuthorizationDemo/bin/Debug
+/Examples/AuthorizationDemo/obj/Debug
+/Examples/CustomerDemo/bin/Debug
+/Examples/CustomerDemo/obj/Debug
+/Examples/ErrorHandling/bin/Debug
+/Examples/ErrorHandling/obj/Debug
+/Examples/ImportDemo/bin/Debug
+/Examples/ImportDemo/obj/Debug
+/Examples/packages/DotNetOpenAuth.Core.4.3.4.13329
+/Examples/packages
+/Examples/ProductDemo/bin/Debug
+/Examples/ProductDemo/obj/Debug
+/Examples/ProjectDemo/bin/Debug
+/Examples/ProjectDemo/obj/Debug
+/Examples/Reporting/bin/Debug
+/Examples/Reporting/obj/Debug

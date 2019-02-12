@@ -1,24 +1,31 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using GoApi;
 using GoApi.Core;
+using GoApi.Global;
 
 namespace Reporting
 {
     public class AccountTransactions
     {
-        public static void AccountTransactionsDemo()
+        /// <summary>
+        /// This demo code shows how to print out account transactions between two dates.
+        /// </summary>
+        /// <returns></returns>
+        public static async Task AccountTransactionsDemo()
         {
             // Set up authorization settings
             var authorizationSettings = new AuthorizationSettings
             {
                 ApplicationKey = "<You Application Key Here>",
                 ClientKey = "<PowerOffice Go Client Key Here>",
-                TokenStore = new BasicTokenStore(@"my.tokenstore")
+                TokenStore = new BasicTokenStore(@"my.tokenstore"),
+                EndPointHost = Settings.EndPointMode.Production //For authorization against the demo environment - Change this to Settings.EndPointMode.Demo
             };
 
             // Initialize the PowerOffice Go API and request authorization
-            var api = new Go(authorizationSettings);
+            var api = await Go.CreateAsync(authorizationSettings);
 
             // List all transactions on account 3000 between 2014-01-01 and today
             const int accountNo = 3000;
@@ -27,6 +34,10 @@ namespace Reporting
 
             Console.WriteLine("Account Transactions:");
             var accountTransactions = api.Reporting.AccountTransactions.Get(accountNo, fromDate, toDate).ToList();
+
+            //This commented out query will get all account transactions without account filter.
+            //var accountTransactions = api.Reporting.AccountTransactions.Get(fromDate, toDate).ToList();
+
             foreach (var transaction in accountTransactions)
                 Console.WriteLine(transaction.Date + " " + transaction.Text + " " + transaction.VoucherType + " " + transaction.Amount + " Number of voucher images: " + transaction.VoucherImagesCount);
 
