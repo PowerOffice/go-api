@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecurringInvoice", "Recurri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneralLedgerAccounts", "GeneralLedgerAccounts\GeneralLedgerAccounts.csproj", "{C9847B0B-206B-4994-97B6-18BC61D0DFD5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoucherDemo", "VoucherDemo\VoucherDemo.csproj", "{0DE5B7FD-3087-4C58-B0B4-0140BC0093F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{C9847B0B-206B-4994-97B6-18BC61D0DFD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9847B0B-206B-4994-97B6-18BC61D0DFD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9847B0B-206B-4994-97B6-18BC61D0DFD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DE5B7FD-3087-4C58-B0B4-0140BC0093F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DE5B7FD-3087-4C58-B0B4-0140BC0093F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DE5B7FD-3087-4C58-B0B4-0140BC0093F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DE5B7FD-3087-4C58-B0B4-0140BC0093F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

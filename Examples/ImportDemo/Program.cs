@@ -23,8 +23,13 @@ namespace ImportDemo
 
         /// <summary>
         ///     The purpose of this demo is to demonstrate how to import various journal types
-        ///     See each import class for details regarding the various import types.
+        ///     See each import class for details regarding the various import types.         
         /// </summary>
+        /// <remarks>
+        ///     FOR VERSION 2.6.0 AND ABOVE:
+        ///     The newly created Voucher endpoint is a prefered way of creating vouchers in PowerOffice Go. 
+        ///     Take a look at VoucherDemo before thinking about using this demo.
+        /// </remarks>
         private static async Task RunDemo()
         {
             try
