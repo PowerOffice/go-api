@@ -4,7 +4,7 @@ Welcome to the PowerOffice Go API.
 
 ## Documentation
 
-Please naviagte to [api.poweroffice.net/Web/docs/index.html](https://api.poweroffice.net/Web/docs/index.html) for C# and REST documentation.
+Please navigate to [api.poweroffice.net/Web/docs/index.html](https://api.poweroffice.net/Web/docs/index.html) for C# and REST documentation.
 
 ## Examples
 
