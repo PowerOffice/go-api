@@ -2,8 +2,9 @@
 using System.Linq;
 using System.Threading.Tasks;
 using GoApi;
+using GoApi.Common;
 using GoApi.Core;
-using GoApi.Global;
+using GoApi.Core.Global;
 using GoApi.Products;
 
 namespace ProductDemo
@@ -36,7 +37,7 @@ namespace ProductDemo
                 {
                     ApplicationKey = "<You Application Key Here>",
                     ClientKey = "<PowerOffice Go Client Key Here>",
-                    TokenStore = new BasicTokenStore(@"my.tokenstore"),
+                    TokenStore = new BasicInMemoryTokenStore(),
                     EndPointHost = Settings.EndPointMode.Production //For authorization against the demo environment - Change this to Settings.EndPointMode.Demo
                 };
 
@@ -84,7 +85,7 @@ namespace ProductDemo
                     VatExemptSalesAccount = 3100,
                     Type = ProductType.Product,
                     Gtin = "",
-                    Unit = "each"
+                    UnitOfMeasureCode = UnitOfMeasureCode.EA
                 };
 
                 //Saves the product 

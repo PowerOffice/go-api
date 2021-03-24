@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using GoApi;
 using GoApi.Core;
-using GoApi.Global;
+using GoApi.Core.Global;
 using GoApi.Voucher;
 
 namespace VoucherDemo
@@ -29,7 +29,7 @@ namespace VoucherDemo
         ///     There is one method for each of the Voucher Types supported by this service.
         ///     All methods will create a voucher, then create a reversal voucher for the previous voucher.
         ///     Reversal Vouchers can be used to reverse the accounting entries that the voucher that is reversed created.
-        ///     This is a new feature from version 2.6.0 and is the prefered way to import vouchers to PowerOffice Go.
+        ///     This is a new feature from version 2.6.0 and is the preferred way to import vouchers to PowerOffice Go.
         /// </summary>
         private static async Task RunDemo()
         {
@@ -40,7 +40,7 @@ namespace VoucherDemo
                 {
                     ApplicationKey = "<You Application Key Here>",
                     ClientKey = "<PowerOffice Go Client Key Here>",
-                    TokenStore = new BasicTokenStore(@"my.tokenstore"),
+                    TokenStore = new BasicInMemoryTokenStore(),
                     EndPointHost = Settings.EndPointMode.Production //For authorization against the demo environment - Change this to Settings.EndPointMode.Demo
                 };
 

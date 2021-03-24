@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using GoApi;
 using GoApi.Common;
 using GoApi.Core;
-using GoApi.Global;
+using GoApi.Core.Global;
 using GoApi.Invoices;
 
 namespace OutgoingInvoice
@@ -34,7 +34,7 @@ namespace OutgoingInvoice
             {
                 ApplicationKey = "<You Application Key Here>",
                 ClientKey = "<PowerOffice Go Client Key Here>",
-                TokenStore = new BasicTokenStore(@"my.tokenstore"),
+                TokenStore = new BasicInMemoryTokenStore(),
                 EndPointHost = Settings.EndPointMode.Production //For authorization against the demo environment - Change this to Settings.EndPointMode.Demo
             };
 
@@ -69,7 +69,7 @@ namespace OutgoingInvoice
                 ProductCode = "1",
                 Description = "Test",
                 Quantity = 5,
-                UnitOfMeasure = "ea",
+                UnitOfMeasureCode = UnitOfMeasureCode.EA,
                 UnitPrice = new decimal(5000.0),
                 ExemptVat = false,
                 DiscountPercent = new decimal(0.1),

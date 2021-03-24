@@ -53,17 +53,20 @@
       <HintPath>..\packages\DotNetOpenAuth.OAuth2.ClientAuthorization.4.3.4.13329\lib\net45-full\DotNetOpenAuth.OAuth2.ClientAuthorization.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GoApi, Version=2.6.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PowerOfficeGoSdk.2.6.0\lib\net452\GoApi.dll</HintPath>
+    <Reference Include="GoApi, Version=2.20.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PowerOfficeGoSdk.2.20.0\lib\net462\GoApi.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Data.Edm, Version=5.8.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Data.Edm.5.8.3\lib\net40\Microsoft.Data.Edm.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />

@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using GoApi;
 using GoApi.Core;
-using GoApi.Global;
+using GoApi.Core.Global;
 
 namespace Reporting
 {
@@ -18,7 +18,7 @@ namespace Reporting
             {
                 ApplicationKey = "<You Application Key Here>",
                 ClientKey = "<PowerOffice Go Client Key Here>",
-                TokenStore = new BasicTokenStore(@"my.tokenstore"),
+                TokenStore = new BasicInMemoryTokenStore(),
                 EndPointHost = Settings.EndPointMode.Production //For authorization against the demo environment - Change this to Settings.EndPointMode.Demo
             };
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GoApi;
 using GoApi.Core;
-using GoApi.Global;
+using GoApi.Core.Global;
 using GoApi.JournalEntry;
 
 namespace JournalEntryDemo
@@ -38,7 +38,7 @@ namespace JournalEntryDemo
                 {
                     ApplicationKey = "<You Application Key Here>",
                     ClientKey = "<PowerOffice Go Client Key Here>",
-                    TokenStore = new BasicTokenStore(@"my.tokenstore"),
+                    TokenStore = new BasicInMemoryTokenStore(),
                     EndPointHost = Settings.EndPointMode.Production //For authorization against the demo environment - Change this to Settings.EndPointMode.Demo
                 };
 

@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GoApi;
 using GoApi.Core;
-using GoApi.Global;
+using GoApi.Core.Global;
 using GoApi.TimeTracking;
 
 namespace TimeTracking
@@ -33,7 +33,7 @@ namespace TimeTracking
             {
                 ApplicationKey = "<You Application Key Here>",
                 ClientKey = "<PowerOffice Go Client Key Here>",
-                TokenStore = new BasicTokenStore(@"my.tokenstore"),
+                TokenStore = new BasicInMemoryTokenStore(),
                 EndPointHost = Settings.EndPointMode.Production //For authorization against the demo environment - Change this to Settings.EndPointMode.Demo
             };
 
@@ -67,7 +67,7 @@ namespace TimeTracking
             var timeTrackingEntries = api.TimeTracking.TimeTrackingEntry.Get().Where(t => t.Date >= monthStart).OrderBy(t => t.Date).ToArray();
             foreach (var timeTrackingEntry in timeTrackingEntries)
             {
-                Console.WriteLine($"{timeTrackingEntry.EmployeeCode} - {timeTrackingEntry.ActivityCode} - {timeTrackingEntry.Date} - {timeTrackingEntry.Hours}");
+                Console.WriteLine($"{timeTrackingEntry.EmployeeCode} - {timeTrackingEntry.ActivityCode} - {timeTrackingEntry.Date} - {timeTrackingEntry.Minutes}");
             }
 
             Console.WriteLine();
@@ -78,7 +78,7 @@ namespace TimeTracking
             var activityCode = "802";
             var projectCode = "2";
             var hourTypeToUse = "Overtid 100 %";
-            var numberOfHours = 12;
+            var numberOfMinutes = 720;
 
 
             var timeTrackingEntryToEdit =
@@ -86,7 +86,7 @@ namespace TimeTracking
 
             if (timeTrackingEntryToEdit != null)
             {
-                timeTrackingEntryToEdit.Hours += numberOfHours;
+                timeTrackingEntryToEdit.Minutes += numberOfMinutes;
                 timeTrackingEntryToEdit.Comment = "A comment from edit";
             }
             else
@@ -96,7 +96,7 @@ namespace TimeTracking
                     ActivityCode = activityCode,
                     Date = date,
                     Comment = "A comment",
-                    Hours = numberOfHours,
+                    Minutes = numberOfMinutes,
                     EmployeeCode = employeeCode,
                     ProjectCode = projectCode,
                     HourType = hourTypeToUse
@@ -111,7 +111,7 @@ namespace TimeTracking
             timeTrackingEntries = api.TimeTracking.TimeTrackingEntry.Get().Where(t => t.Date >= monthStart).OrderBy(t => t.Date).ToArray();
             foreach (var timeTrackingEntry in timeTrackingEntries)
             {
-                Console.WriteLine($"{timeTrackingEntry.EmployeeCode} - {timeTrackingEntry.ActivityCode} - {timeTrackingEntry.Date} - {timeTrackingEntry.Hours}");
+                Console.WriteLine($"{timeTrackingEntry.EmployeeCode} - {timeTrackingEntry.ActivityCode} - {timeTrackingEntry.Date} - {timeTrackingEntry.Minutes}");
             }
 
             Console.WriteLine("Press any key to exit...");

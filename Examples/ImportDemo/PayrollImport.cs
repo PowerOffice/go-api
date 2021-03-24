@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using GoApi;
 using GoApi.Core;
-using GoApi.Global;
+using GoApi.Core.Global;
 using GoApi.Import;
 
 namespace ImportDemo
@@ -19,7 +19,7 @@ namespace ImportDemo
             {
                 ApplicationKey = "<You Application Key Here>",
                 ClientKey = "<PowerOffice Go Client Key Here>",
-                TokenStore = new BasicTokenStore(@"my.tokenstore"),
+                TokenStore = new BasicInMemoryTokenStore(),
                 EndPointHost = Settings.EndPointMode.Production //For authorization against the demo environment - Change this to Settings.EndPointMode.Demo
             };
 
@@ -30,7 +30,7 @@ namespace ImportDemo
             var import = CreateAndSaveImport(api);
 
             // List un-posted imports
-            ImportList.ListUnpostedImports();
+            await ImportList.ListUnpostedImports();
 
             // The user can post the journal manually from the PowerOffice GO user interface,
             // or the journal can be posted by code.

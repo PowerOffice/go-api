@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using GoApi;
 using GoApi.Common;
 using GoApi.Core;
-using GoApi.Global;
+using GoApi.Core.Global;
 using GoApi.Invoices;
 
 
@@ -37,7 +37,7 @@ namespace RecurringInvoice
                 {
                     ApplicationKey = "<You Application Key Here>",
                     ClientKey = "<PowerOffice Go Client Key Here>",
-                    TokenStore = new BasicTokenStore(@"my.tokenstore"),
+                    TokenStore = new BasicInMemoryTokenStore(),
                     EndPointHost = Settings.EndPointMode.Production //For authorization against the demo environment - Change this to Settings.EndPointMode.Demo
                 };
 
@@ -79,7 +79,7 @@ namespace RecurringInvoice
                     ProductCode = "1",
                     Description = "Overridden product description",
                     Quantity = 15,
-                    UnitOfMeasure = "EA",
+                    UnitOfMeasureCode = UnitOfMeasureCode.EA,
                     UnitPrice = 1250,
                     LineType = VoucherLineType.Normal,
                     SortOrder = 0
