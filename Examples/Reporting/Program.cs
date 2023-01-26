@@ -32,6 +32,16 @@ namespace Reporting
                 Console.WriteLine("Error: " + e.Message);
             }
 
+            try
+            {
+                await AccountTransactions.AccountTransactionsDemo();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+
+            }
+
             // Wait for user input
             Console.WriteLine("\n\nPress any key...");
             Console.ReadKey();

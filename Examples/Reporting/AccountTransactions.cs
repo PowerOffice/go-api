@@ -29,7 +29,7 @@ namespace Reporting
 
             // List all transactions on account 3000 between 2014-01-01 and today
             const int accountNo = 3000;
-            var fromDate = new DateTime(2014, 1, 1);
+            var fromDate = new DateTime(2022, 1, 1);
             var toDate = DateTime.Now;
 
             Console.WriteLine("Account Transactions:");
@@ -39,7 +39,9 @@ namespace Reporting
             //var accountTransactions = api.Reporting.AccountTransactions.Get(fromDate, toDate).ToList();
 
             foreach (var transaction in accountTransactions)
+            {
                 Console.WriteLine(transaction.Date + " " + transaction.Text + " " + transaction.VoucherType + " " + transaction.Amount + " Number of voucher images: " + transaction.VoucherImagesCount);
+            }
 
             // Load image for the first transaction with an attached voucher image
             var transactionWithImages = accountTransactions.FirstOrDefault(t => t.VoucherImagesCount > 0);
