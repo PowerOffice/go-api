@@ -2,6 +2,10 @@
 
 Welcome to the PowerOffice Go API.
 
+## API v2
+
+Find our API v2 at [developer.poweroffice.et](https://developer.poweroffice.net/)
+
 ## Documentation
 
 Please navigate to [api.poweroffice.net/Web/docs/index.html](https://api.poweroffice.net/Web/docs/index.html) for C# and REST documentation.
