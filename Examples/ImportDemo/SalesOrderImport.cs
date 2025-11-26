@@ -14,7 +14,7 @@ namespace ImportDemo
     public class SalesOrderImport
     {
         /// <summary>
-        ///     This is is very simple demo of how to create a sales order import.
+        ///     This is a very simple demo of how to create a sales order import.
         /// </summary>
         public static async Task SalesOrderImportDemo()
         {

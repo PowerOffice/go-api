@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using GoApi;
+using GoApi.Common;
 using GoApi.Core;
 using GoApi.Core.Global;
 
@@ -21,7 +22,9 @@ namespace Reporting
                 ApplicationKey = "<You Application Key Here>",
                 ClientKey = "<PowerOffice Go Client Key Here>",
                 TokenStore = new BasicInMemoryTokenStore(),
-                EndPointHost = Settings.EndPointMode.Production //For authorization against the demo environment - Change this to Settings.EndPointMode.Demo
+                EndPointHost =
+                    Settings.EndPointMode
+                        .Production //For authorization against the demo environment - Change this to Settings.EndPointMode.Demo
             };
 
             // Initialize the PowerOffice Go API and request authorization
@@ -33,24 +36,44 @@ namespace Reporting
             var toDate = DateTime.Now;
 
             Console.WriteLine("Account Transactions:");
-            var accountTransactions = api.Reporting.AccountTransactions.Get(accountNo, fromDate, toDate).ToList();
-
-            //This commented out query will get all account transactions without account filter.
-            //var accountTransactions = api.Reporting.AccountTransactions.Get(fromDate, toDate).ToList();
-
-            foreach (var transaction in accountTransactions)
+            int batch = 0;
+            int limit = 1000;
+            // Iterate accounttransactions with skip and take
+            while (true)
             {
-                Console.WriteLine(transaction.Date + " " + transaction.Text + " " + transaction.VoucherType + " " + transaction.Amount + " Number of voucher images: " + transaction.VoucherImagesCount);
-            }
+                var batchTransactions = api.Reporting.AccountTransactions
+                    .Get(fromDate, toDate)
+                    .Where(x => x.VoucherType != VoucherType.BeginningBalance)
+                    .OrderBy(x => x.Id)
+                    .Skip(batch * limit)
+                    .Take(limit)
+                    .ToList();
+                Console.WriteLine("BatchCount {0}", batchTransactions.Count);
+                batch++;
+                if (batchTransactions.Count == 0)
+                {
+                    Console.WriteLine("Batchtransactions count less than limit, breaking out of loop");
+                    break;
+                }
 
-            // Load image for the first transaction with an attached voucher image
-            var transactionWithImages = accountTransactions.FirstOrDefault(t => t.VoucherImagesCount > 0);
-            if (transactionWithImages != null)
-            {
-                Console.WriteLine("Load first image for voucher {0}", transactionWithImages.VoucherNo);
+                //This commented out query will get all account transactions without account filter.
+                //var accountTransactions = api.Reporting.AccountTransactions.Get(fromDate, toDate).ToList();
+                foreach (var transaction in batchTransactions)
+                {
+                    Console.WriteLine(transaction.Date + " " + transaction.Text + " " + transaction.VoucherType + " " +
+                                      transaction.Amount + " Number of voucher images: " +
+                                      transaction.VoucherImagesCount);
+                }
 
-                var imageStream = api.Blob.GetVoucherImage(transactionWithImages.VoucherNo, 1);
-                // At this point imageStream contains a jpeg image of the first page of the voucher
+                // // Load image for the first transaction with an attached voucher image
+                var transactionWithImages = batchTransactions.FirstOrDefault(t => t.VoucherImagesCount > 0);
+                if (transactionWithImages != null)
+                {
+                    Console.WriteLine("Load first image for voucher {0}", transactionWithImages.VoucherNo);
+
+                    var imageStream = api.Blob.GetVoucherImage(transactionWithImages.VoucherNo, 1);
+                    // At this point imageStream contains a jpeg image of the first page of the voucher
+                }
             }
         }
     }
