@@ -8,7 +8,7 @@ Find our API v2 at [developer.poweroffice.et](https://developer.poweroffice.net/
 
 ## Documentation
 
-Please navigate to [api.poweroffice.net/Web/docs/index.html](https://api.poweroffice.net/Web/docs/index.html) for C# and REST documentation.
+Please navigate to [api-legacy.poweroffice.net](https://api-legacy.poweroffice.net/) for C# and REST documentation.
 
 A Postman collection is available [here.](https://www.postman.com/gold-sunset-645321/workspace/poweroffice-api-v1-public/overview)
 
@@ -22,6 +22,7 @@ Example              | Task
 :------------------- |:---------------
 AuthorizationDemo    | Connect to the authorization server, and retreive authorization.
 CustomerDemo         | Find a customer by Vat number, update customer and get list of customers.
+DebtCollectionDemo   | Create and query debt collection cases.
 GeneralLedgerAccounts| Create and query general ledger accounts on the client.
 ImportDemo           | Upload and post a Payroll Journal, Sales Order Import and CustomerInvoicesImport.
 JournalEntryDemo     | Create vouchers that will appear in Journal Entry on PowerOffice Go.
@@ -38,4 +39,4 @@ VoucherDemo          | Creating and posting Vouchers directly into PowerOffice G
 
 Developer support is provided via e-mail: [go-api@poweroffice.no](mailto:go-api@poweroffice.no)
 
-Bugs and issues can be reported using the [github issue tracker](https://github.com/PowerOffice/go-api/issues)
+Bugs and issues can be reported using the [GitHub issue tracker](https://github.com/PowerOffice/go-api/issues)
