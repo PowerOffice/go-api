@@ -392,10 +392,10 @@ namespace DebtCollectionDemo
                     {
                         var api = await Go.CreateAsync(new AuthorizationSettings
                         {
-                            ApplicationKey = "7a70e5cf-b779-42b9-8389-3d8b2873582c",
-                            ClientKey = "14631e95-f63c-43ce-97fd-eb0e625e99b2",
+                            ApplicationKey = "<You Application Key Here>",
+                            ClientKey = "<PowerOffice Go Client Key Here>",
                             TokenStore = new BasicInMemoryTokenStore(),
-                            EndPointHost = new Settings.Host(Settings.EndPointMode.Debug, "https://localhost:7239")
+                            EndPointHost = Settings.EndPointMode.Production //For authorization against the demo environment - Change this to Settings.EndPointMode.Demo
                         });
 
                         // Delete debt collection case
