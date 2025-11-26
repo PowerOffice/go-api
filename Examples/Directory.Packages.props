@@ -1,0 +1,11 @@
+<Project>
+  <PropertyGroup>
+    <!-- Enable central package management, https://learn.microsoft.com/en-us/nuget/consume-packages/Central-Package-Management -->
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+    <ItemGroup>
+        <PackageVersion Include="PowerOfficeGoSdk" Version="3.0.0" />
+        <PackageVersion Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageVersion Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    </ItemGroup>
+</Project>
