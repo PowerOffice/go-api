@@ -8,7 +8,7 @@ Find our API v2 at [developer.poweroffice.et](https://developer.poweroffice.net/
 
 ## Documentation
 
-Please navigate to [api.poweroffice.net/Web/docs/index.html](https://api.poweroffice.net/Web/docs/index.html) for C# and REST documentation.
+Please navigate to [api-legacy.poweroffice.net](https://api-legacy.poweroffice.net/) for C# and REST documentation.
 
 A Postman collection is available [here.](https://www.postman.com/gold-sunset-645321/workspace/poweroffice-api-v1-public/overview)
 
